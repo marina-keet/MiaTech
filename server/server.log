@@ -1,0 +1,10 @@
+🚀 Serveur MiaTech Login démarré sur le port 5000
+📍 Santé: http://localhost:5000/health
+🔑 Login: POST http://localhost:5000/api/auth/login
+📧 Comptes test:
+   - admin@miatech.com / password123
+   - client@miatech.com / password123
+GET /health {}
+GET /api/auth/test {}
+POST /api/auth/register { name: 'Test User', email: 'test@example.com', password: '123456' }
+POST /api/auth/login { email: 'client@miatech.com', password: 'password123', name: '' }

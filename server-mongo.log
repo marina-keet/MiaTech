@@ -1,0 +1,13 @@
+nohup: les entrées sont ignorées
+🔗 Mongoose connecté à MongoDB
+✅ MongoDB connecté: localhost
+📊 Base de données: mia_tech
+🚀 ====================================
+   MiaTech Server MongoDB démarré !
+   📍 Port: 5000
+   🌍 URL: http://localhost:5000
+   📊 Base: mia_tech
+   🏥 Health: /api/health
+   👤 Auth: /api/auth/login|register
+   🧪 Test: /api/test/users|services|orders
+====================================

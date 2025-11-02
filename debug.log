@@ -1,0 +1,13 @@
+nohup: les entrées sont ignorées
+🔍 Debug serveur sur port 5001
+
+🔍 DEBUG LOGIN:
+Email reçu: admin@miatech.com
+Password reçu: admin123
+Utilisateur trouvé: OUI
+Hash en DB: $2a$10$0RLaJVqabfC8HsEHareMKO/PEoZwLfL/b9AOZzsN7yXSS6TY2mEf6
+Longueur du hash: 60
+Type du password: string string
+✅ Résultat bcrypt.compare: false
+Hash de test: $2a$12$qMsjTYsS58mtugvk2DNVZeGVMHrSju0p1hVgLTRY.J.sodZ7qHe0.
+✅ Test manuel: true

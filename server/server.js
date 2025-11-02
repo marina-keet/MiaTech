@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const cookieParser = require('cookie-parser');
 require('dotenv').config();
 
 const app = express();
@@ -26,6 +27,7 @@ app.use(cors({
 // Body parser
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
@@ -36,6 +38,8 @@ app.use('/api/payments', require('./routes/payments'));
 app.use('/api/blog', require('./routes/blog'));
 app.use('/api/contact', require('./routes/contact'));
 app.use('/api/users', require('./routes/users'));
+app.use('/api/communications', require('./routes/communications'));
+app.use('/api/i18n', require('./routes/i18n'));
 
 // Route de santé
 app.get('/health', (req, res) => {
@@ -63,8 +67,15 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/miatech')
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
+// Initialiser le service de chat WebSocket
+const server = app.listen(PORT, () => {
   console.log(`🚀 Serveur MiaTech démarré sur le port ${PORT}`);
 });
+
+// Initialiser le service de chat avec WebSocket
+const ChatService = require('./services/chatService');
+const chatService = new ChatService(server);
+
+console.log('💬 Service de chat WebSocket initialisé');
 
 module.exports = app;

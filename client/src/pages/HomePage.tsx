@@ -1,197 +1,557 @@
-import React from 'react';
+import React from 'react'
 
-const HomePage: React.FC = () => {
+interface User {
+  id: string
+  name: string
+  email: string
+  role: string
+}
+
+interface HomePageProps {
+  user: User
+  onLogout: () => void
+  onNavigateToOrder: () => void
+  onNavigateToQuote: () => void
+  onNavigateToProjects: () => void
+}
+
+const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, onNavigateToQuote, onNavigateToProjects }) => {
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 fade-in-up">
-              MiaTech
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90 fade-in-up">
-              Votre partenaire technologique pour des solutions digitales innovantes
-            </p>
-            <p className="text-lg mb-10 opacity-80 max-w-2xl mx-auto fade-in-up">
-              Développement web & mobile, design UX/UI, branding et conseil technologique. 
-              Transformez vos idées en réalité avec notre expertise.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center fade-in-up">
-              <a href="/services" className="btn-primary text-lg px-8 py-3">
-                Découvrir nos services
-              </a>
-              <a href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-primary-600 text-lg px-8 py-3">
-                Nous contacter
-              </a>
-            </div>
-          </div>
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      padding: '20px'
+    }}>
+      {/* Header */}
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: '30px',
+        maxWidth: '1200px',
+        margin: '0 auto 30px'
+      }}>
+        <div>
+          <h1 style={{ 
+            fontSize: '2.5rem', 
+            color: 'white',
+            margin: '0',
+            textShadow: '0 2px 10px rgba(0,0,0,0.3)'
+          }}>
+            M Tableau de Bord MiaTech
+          </h1>
+          <p style={{ 
+            color: 'rgba(255,255,255,0.9)', 
+            fontSize: '1.1rem',
+            margin: '5px 0 0 0'
+          }}>
+            Bienvenue, {user.name}!
+          </p>
         </div>
-      </section>
+        <button
+          onClick={onLogout}
+          style={{
+            background: 'rgba(255,255,255,0.2)',
+            border: '2px solid rgba(255,255,255,0.3)',
+            color: 'white',
+            padding: '12px 24px',
+            borderRadius: '25px',
+            cursor: 'pointer',
+            fontSize: '1rem',
+            fontWeight: '500'
+          }}
+        >
+          🚪 Se déconnecter
+        </button>
+      </div>
 
-      {/* Services Overview */}
-      <section className="py-20 bg-white">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Nos Expertises
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Des solutions sur mesure pour accompagner votre croissance digitale
-            </p>
-          </div>
+      {/* Navigation rapide */}
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto 30px auto'
+      }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '20px',
+          flexWrap: 'wrap'
+        }}>
+          <button
+            onClick={onNavigateToProjects}
+            style={{
+              background: 'rgba(255,255,255,0.95)',
+              border: 'none',
+              borderRadius: '15px',
+              padding: '15px 25px',
+              cursor: 'pointer',
+              fontSize: '1rem',
+              fontWeight: '600',
+              color: '#374151',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              boxShadow: '0 8px 25px rgba(0,0,0,0.15)',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-2px)'
+              e.currentTarget.style.boxShadow = '0 12px 35px rgba(0,0,0,0.2)'
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)'
+              e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)'
+            }}
+          >
+            <span style={{ fontSize: '1.2rem' }}>📊</span>
+            Suivi de Projets
+          </button>
+        </div>
+      </div>
+
+      {/* Contenu principal */}
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto'
+      }}>
+        {/* Informations utilisateur */}
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.95)',
+          borderRadius: '15px',
+          padding: '25px',
+          boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+          marginBottom: '30px'
+        }}>
+          <h2 style={{ 
+            color: '#6b46c1', 
+            marginBottom: '20px',
+            fontSize: '1.5rem'
+          }}>
+            👤 Vos informations
+          </h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="card p-8 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                </svg>
-              </div>
-              <h3 className="text-2xl font-semibold mb-4">Développement Web</h3>
-              <p className="text-gray-600 mb-6">
-                Applications web modernes et performantes avec les dernières technologies
-              </p>
-              <a href="/services" className="text-primary-600 font-medium hover:text-primary-700">
-                En savoir plus →
-              </a>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '15px'
+          }}>
+            <div style={{
+              background: '#f8fafc',
+              padding: '15px',
+              borderRadius: '8px',
+              border: '1px solid #e2e8f0'
+            }}>
+              <strong>📧 Email:</strong> {user.email}
             </div>
-
-            <div className="card p-8 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17 2v2h2v14a4 4 0 01-4 4H9a4 4 0 01-4-4V4h2V2h10zM7 6v12a2 2 0 002 2h6a2 2 0 002-2V6H7z"/>
-                </svg>
-              </div>
-              <h3 className="text-2xl font-semibold mb-4">Applications Mobile</h3>
-              <p className="text-gray-600 mb-6">
-                Applications natives et cross-platform pour iOS et Android
-              </p>
-              <a href="/services" className="text-primary-600 font-medium hover:text-primary-700">
-                En savoir plus →
-              </a>
+            
+            <div style={{
+              background: '#f8fafc',
+              padding: '15px',
+              borderRadius: '8px',
+              border: '1px solid #e2e8f0'
+            }}>
+              <strong>🏷️ Rôle:</strong> {user.role}
             </div>
-
-            <div className="card p-8 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-              </div>
-              <h3 className="text-2xl font-semibold mb-4">Design UX/UI</h3>
-              <p className="text-gray-600 mb-6">
-                Expériences utilisateur intuitives et designs modernes
-              </p>
-              <a href="/services" className="text-primary-600 font-medium hover:text-primary-700">
-                En savoir plus →
-              </a>
+            
+            <div style={{
+              background: '#f8fafc',
+              padding: '15px',
+              borderRadius: '8px',
+              border: '1px solid #e2e8f0'
+            }}>
+              <strong>🆔 ID:</strong> {user.id}
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Pourquoi choisir MiaTech ?
-              </h2>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Expertise technique approfondie</h3>
-                    <p className="text-gray-600">Plus de 5 ans d'expérience dans le développement d'applications web et mobile</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Suivi personnalisé</h3>
-                    <p className="text-gray-600">Un accompagnement sur mesure avec un suivi en temps réel de vos projets</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Technologies modernes</h3>
-                    <p className="text-gray-600">Utilisation des dernières technologies pour des solutions performantes et évolutives</p>
-                  </div>
-                </div>
+        {/* Services disponibles */}
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.95)',
+          borderRadius: '15px',
+          padding: '30px',
+          boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
+        }}>
+          <h2 style={{ 
+            color: '#1f2937', 
+            marginBottom: '30px',
+            fontSize: '2rem',
+            fontWeight: '700',
+            textAlign: 'center'
+          }}>
+            Nos Services
+          </h2>
+          
+          {/* Grid de cartes services */}
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '25px'
+          }}>
+            
+            {/* App Development */}
+            <div style={{
+              background: 'white',
+              borderRadius: '16px',
+              padding: '25px',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+              border: '1px solid #f1f5f9',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px)'
+              e.currentTarget.style.boxShadow = '0 10px 40px rgba(0,0,0,0.15)'
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)'
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)'
+            }}>
+              <div style={{
+                width: '60px',
+                height: '60px',
+                background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+                borderRadius: '12px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: '0 auto 20px',
+                fontSize: '24px'
+              }}>
+                📱
+              </div>
+              <h3 style={{
+                fontSize: '1.3rem',
+                fontWeight: '600',
+                color: '#1f2937',
+                marginBottom: '12px'
+              }}>
+                App Development
+              </h3>
+              <p style={{
+                color: '#6b7280',
+                fontSize: '0.95rem',
+                lineHeight: '1.5',
+                marginBottom: '15px'
+              }}>
+                Applications web modernes et performantes
+              </p>
+              <div style={{
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                color: '#3b82f6'
+              }}>
+                À partir de $2500
+              </div>
+            </div>
+
+            {/* UI/UX Design */}
+            <div style={{
+              background: 'white',
+              borderRadius: '16px',
+              padding: '25px',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+              border: '1px solid #f1f5f9',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px)'
+              e.currentTarget.style.boxShadow = '0 10px 40px rgba(0,0,0,0.15)'
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)'
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)'
+            }}>
+              <div style={{
+                width: '60px',
+                height: '60px',
+                background: 'linear-gradient(135deg, #8b5cf6, #7c3aed)',
+                borderRadius: '12px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: '0 auto 20px',
+                fontSize: '24px'
+              }}>
+                🎨
+              </div>
+              <h3 style={{
+                fontSize: '1.3rem',
+                fontWeight: '600',
+                color: '#1f2937',
+                marginBottom: '12px'
+              }}>
+                UI / UX Design
+              </h3>
+              <p style={{
+                color: '#6b7280',
+                fontSize: '0.95rem',
+                lineHeight: '1.5',
+                marginBottom: '15px'
+              }}>
+                Interfaces modernes et expériences utilisateur
+              </p>
+              <div style={{
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                color: '#8b5cf6'
+              }}>
+                À partir de $1500
+              </div>
+            </div>
+
+            {/* Conception d'affiches */}
+            <div style={{
+              background: 'white',
+              borderRadius: '16px',
+              padding: '25px',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+              border: '1px solid #f1f5f9',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px)'
+              e.currentTarget.style.boxShadow = '0 10px 40px rgba(0,0,0,0.15)'
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)'
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)'
+            }}>
+              <div style={{
+                width: '60px',
+                height: '60px',
+                background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+                borderRadius: '12px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: '0 auto 20px',
+                fontSize: '24px'
+              }}>
+                🖼️
+              </div>
+              <h3 style={{
+                fontSize: '1.3rem',
+                fontWeight: '600',
+                color: '#1f2937',
+                marginBottom: '12px'
+              }}>
+                Conception d'affiches
+              </h3>
+              <p style={{
+                color: '#6b7280',
+                fontSize: '0.95rem',
+                lineHeight: '1.5',
+                marginBottom: '15px'
+              }}>
+                Affiches publicitaires et événementielles
+              </p>
+              <div style={{
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                color: '#f59e0b'
+              }}>
+                À partir de $300
+              </div>
+            </div>
+
+            {/* Cartes de visite */}
+            <div style={{
+              background: 'white',
+              borderRadius: '16px',
+              padding: '25px',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+              border: '1px solid #f1f5f9',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px)'
+              e.currentTarget.style.boxShadow = '0 10px 40px rgba(0,0,0,0.15)'
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)'
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)'
+            }}>
+              <div style={{
+                width: '60px',
+                height: '60px',
+                background: 'linear-gradient(135deg, #10b981, #059669)',
+                borderRadius: '12px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: '0 auto 20px',
+                fontSize: '24px'
+              }}>
+                💳
+              </div>
+              <h3 style={{
+                fontSize: '1.3rem',
+                fontWeight: '600',
+                color: '#1f2937',
+                marginBottom: '12px'
+              }}>
+                Cartes de visite
+              </h3>
+              <p style={{
+                color: '#6b7280',
+                fontSize: '0.95rem',
+                lineHeight: '1.5',
+                marginBottom: '15px'
+              }}>
+                Designs professionnels et modernes
+              </p>
+              <div style={{
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                color: '#10b981'
+              }}>
+                À partir de $150
+              </div>
+            </div>
+
+            {/* Autres services */}
+            <div style={{
+              background: 'white',
+              borderRadius: '16px',
+              padding: '25px',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+              border: '1px solid #f1f5f9',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px)'
+              e.currentTarget.style.boxShadow = '0 10px 40px rgba(0,0,0,0.15)'
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)'
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)'
+            }}>
+              <div style={{
+                width: '60px',
+                height: '60px',
+                background: 'linear-gradient(135deg, #ef4444, #dc2626)',
+                borderRadius: '12px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: '0 auto 20px',
+                fontSize: '24px'
+              }}>
+                ⚡
+              </div>
+              <h3 style={{
+                fontSize: '1.3rem',
+                fontWeight: '600',
+                color: '#1f2937',
+                marginBottom: '12px'
+              }}>
+                Autres services
+              </h3>
+              <p style={{
+                color: '#6b7280',
+                fontSize: '0.95rem',
+                lineHeight: '1.5',
+                marginBottom: '15px'
+              }}>
+                Logos, flyers, bannières et plus
+              </p>
+              <div style={{
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                color: '#ef4444'
+              }}>
+                Sur devis
               </div>
             </div>
             
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold mb-6">Démarrez votre projet</h3>
-              <form className="space-y-4">
-                <div>
-                  <label className="label">Nom complet</label>
-                  <input type="text" className="input" placeholder="Votre nom" />
-                </div>
-                <div>
-                  <label className="label">Email</label>
-                  <input type="email" className="input" placeholder="votre@email.com" />
-                </div>
-                <div>
-                  <label className="label">Type de projet</label>
-                  <select className="input">
-                    <option>Sélectionner un service</option>
-                    <option>Site web</option>
-                    <option>Application mobile</option>
-                    <option>Design UX/UI</option>
-                    <option>Autre</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="label">Message</label>
-                  <textarea className="input" rows={4} placeholder="Décrivez votre projet..."></textarea>
-                </div>
-                <button type="submit" className="btn-primary w-full">
-                  Demander un devis gratuit
-                </button>
-              </form>
-            </div>
           </div>
-        </div>
-      </section>
+          
+          {/* Boutons d'action */}
+          <div style={{ 
+            marginTop: '30px', 
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '15px',
+            maxWidth: '500px',
+            margin: '30px auto 0'
+          }}>
+            {/* Bouton Demander un devis */}
+            <button
+              onClick={onNavigateToQuote}
+              style={{
+                background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+                border: 'none',
+                color: 'white',
+                padding: '15px 25px',
+                borderRadius: '25px',
+                cursor: 'pointer',
+                fontSize: '1rem',
+                fontWeight: '600',
+                boxShadow: '0 5px 15px rgba(59, 130, 246, 0.3)',
+                transition: 'all 0.3s'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)'
+                e.currentTarget.style.boxShadow = '0 8px 25px rgba(59, 130, 246, 0.4)'
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)'
+                e.currentTarget.style.boxShadow = '0 5px 15px rgba(59, 130, 246, 0.3)'
+              }}
+            >
+              📋 Demander un devis
+            </button>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-primary-600 text-white">
-        <div className="container text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Prêt à transformer vos idées en réalité ?
-          </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Contactez-nous dès aujourd'hui pour discuter de votre projet et obtenir un devis personnalisé.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/order" className="btn bg-white text-primary-600 hover:bg-gray-100 text-lg px-8 py-3">
-              Commander un service
-            </a>
-            <a href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-primary-600 text-lg px-8 py-3">
-              Planifier un appel
-            </a>
+            {/* Bouton Commander */}
+            <button
+              onClick={onNavigateToOrder}
+              style={{
+                background: 'linear-gradient(135deg, #10b981, #059669)',
+                border: 'none',
+                color: 'white',
+                padding: '15px 25px',
+                borderRadius: '25px',
+                cursor: 'pointer',
+                fontSize: '1rem',
+                fontWeight: '600',
+                boxShadow: '0 5px 15px rgba(16, 185, 129, 0.3)',
+                transition: 'all 0.3s'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)'
+                e.currentTarget.style.boxShadow = '0 8px 25px rgba(16, 185, 129, 0.4)'
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)'
+                e.currentTarget.style.boxShadow = '0 5px 15px rgba(16, 185, 129, 0.3)'
+              }}
+            >
+              🛍️ Commander un service
+            </button>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Footer */}
+      <div style={{
+        textAlign: 'center',
+        marginTop: '50px',
+        color: 'rgba(255,255,255,0.8)',
+        fontSize: '0.9rem'
+      }}>
+        <p>🚀 MiaTech - Solutions Technologiques Innovantes</p>
+        <p>© 2025 - Votre partenaire digital de confiance</p>
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage

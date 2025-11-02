@@ -1,0 +1,47 @@
+nohup: les entrées sont ignorées
+🚀 ====================================
+   MiaTech Serveur Temporaire
+   📍 Port: 5000
+   🌍 URL: http://localhost:5000
+   👤 Utilisateurs: 1
+   📧 Test: admin@miatech.com / admin123
+====================================
+2025-11-02T21:53:15.400Z - POST /api/auth/register
+📝 Inscription - données: { name: 'Test User', email: 'test@example.com', password: 'test123' }
+🔐 Hashage du mot de passe...
+✅ Utilisateur créé: { id: 2, name: 'Test User', email: 'test@example.com' }
+2025-11-02T21:53:33.836Z - POST /api/auth/login
+🔑 Connexion - données: { email: 'test@example.com' }
+✅ Connexion réussie: test@example.com
+2025-11-02T21:58:07.828Z - POST /api/auth/register
+📝 Inscription - données: {
+  email: 'chancel@gmail.com',
+  password: 'chancel',
+  name: 'chancel lala'
+}
+🔐 Hashage du mot de passe...
+✅ Utilisateur créé: { id: 3, name: 'chancel lala', email: 'chancel@gmail.com' }
+2025-11-02T21:58:22.621Z - POST /api/auth/login
+🔑 Connexion - données: { email: 'chancel@gmail.com' }
+✅ Connexion réussie: chancel@gmail.com
+2025-11-02T21:58:33.867Z - POST /api/auth/register
+📝 Inscription - données: {
+  email: 'chancel@gmail.com',
+  password: 'chancel',
+  name: 'chancel lala'
+}
+❌ Email déjà utilisé: chancel@gmail.com
+2025-11-02T21:58:42.040Z - POST /api/auth/login
+🔑 Connexion - données: { email: 'chancel@gmail.com' }
+✅ Connexion réussie: chancel@gmail.com
+2025-11-02T22:19:14.299Z - POST /api/auth/login
+🔑 Connexion - données: { email: 'chancel@gmail.com' }
+✅ Connexion réussie: chancel@gmail.com
+2025-11-02T22:21:16.978Z - POST /api/auth/login
+🔑 Connexion - données: { email: 'chancel@gmail.com' }
+✅ Connexion réussie: chancel@gmail.com
+2025-11-02T22:23:23.673Z - POST /api/auth/login
+🔑 Connexion - données: { email: 'chancel@gmail.com' }
+✅ Connexion réussie: chancel@gmail.com
+
+🔴 Arrêt du serveur...

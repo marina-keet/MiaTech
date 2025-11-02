@@ -2,7 +2,7 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const { body, validationResult } = require('express-validator');
 const User = require('../models/User');
-const auth = require('../middleware/auth');
+const { authenticate } = require('../middleware/auth');
 
 const router = express.Router();
 
@@ -131,7 +131,7 @@ router.post('/login', [
 // @route   GET /api/auth/me
 // @desc    Obtenir les infos de l'utilisateur connecté
 // @access  Private
-router.get('/me', auth, async (req, res) => {
+router.get('/me', authenticate, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
     res.json(user);
@@ -144,7 +144,7 @@ router.get('/me', auth, async (req, res) => {
 // @route   PUT /api/auth/profile
 // @desc    Mettre à jour le profil utilisateur
 // @access  Private
-router.put('/profile', auth, [
+router.put('/profile', authenticate, [
   body('firstName').optional().notEmpty().withMessage('Le prénom ne peut pas être vide'),
   body('lastName').optional().notEmpty().withMessage('Le nom ne peut pas être vide'),
   body('email').optional().isEmail().withMessage('Email invalide')

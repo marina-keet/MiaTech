@@ -1,95 +1,293 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Toaster } from 'react-hot-toast';
+import { useState } from 'react'
+import HomePage from './pages/HomePage'
+import OrderPage from './pages/OrderPage'
+import QuotePage from './pages/QuotePage'
+import ProjectTrackingPage from './pages/ProjectTrackingPage'
 
-// Pages
-import HomePage from './pages/HomePage';
-import ServicesPage from './pages/ServicesPage';
-import OrderPage from './pages/OrderPage';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import DashboardPage from './pages/DashboardPage';
-import ContactPage from './pages/ContactPage';
-import BlogPage from './pages/BlogPage';
-import BlogPostPage from './pages/BlogPostPage';
-
-// Components
-import Layout from './components/Layout/Layout';
-import ProtectedRoute from './components/ProtectedRoute';
-
-// Créer une instance du client React Query
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 5 * 60 * 1000, // 5 minutes
-      cacheTime: 10 * 60 * 1000, // 10 minutes
-    },
-  },
-});
+interface User {
+  id: string
+  name: string
+  email: string
+  role: string
+}
 
 function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Router>
-        <div className="min-h-screen bg-gray-50">
-          <Toaster
-            position="top-right"
-            toastOptions={{
-              duration: 4000,
-              className: 'font-sans',
-              style: {
-                background: '#fff',
-                color: '#1f2937',
-                border: '1px solid #e5e7eb',
-                borderRadius: '8px',
-              },
-            }}
-          />
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [user, setUser] = useState<User | null>(null)
+  const [currentPage, setCurrentPage] = useState<'home' | 'order' | 'quote' | 'projects'>('home')
+  const [isLogin, setIsLogin] = useState(true)
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    name: ''
+  })
+
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    setUser(null)
+    setIsLoggedIn(false)
+    setCurrentPage('home')
+    setFormData({ email: '', password: '', name: '' })
+  }
+
+  const handleNavigateToOrder = () => {
+    setCurrentPage('order')
+  }
+
+  const handleNavigateToQuote = () => {
+    setCurrentPage('quote')
+  }
+
+  const handleNavigateToProjects = () => {
+    setCurrentPage('projects')
+  }
+
+  const handleBackToHome = () => {
+    setCurrentPage('home')
+  }
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    try {
+      const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register'
+      const response = await fetch(`http://localhost:5000${endpoint}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+
+      const data = await response.json()
+      
+      if (response.ok) {
+        if (isLogin) {
+          // CONNEXION : Connecter l'utilisateur et rediriger vers la page d'accueil
+          localStorage.setItem('token', data.token)
           
-          <Routes>
-            {/* Routes publiques avec layout */}
-            <Route path="/" element={<Layout />}>
-              <Route index element={<HomePage />} />
-              <Route path="services" element={<ServicesPage />} />
-              <Route path="services/:serviceId" element={<ServicesPage />} />
-              <Route path="order/:serviceId?" element={<OrderPage />} />
-              <Route path="contact" element={<ContactPage />} />
-              <Route path="blog" element={<BlogPage />} />
-              <Route path="blog/:slug" element={<BlogPostPage />} />
-            </Route>
+          // Transformer les données utilisateur pour correspondre à l'interface
+          const userFormatted = {
+            id: data.user._id || data.user.id,
+            name: data.user.name,
+            email: data.user.email,
+            role: data.user.role || 'user'
+          }
+          
+          setUser(userFormatted)
+          setIsLoggedIn(true)
+          
+          console.log('Connexion réussie, redirection vers la page d\'accueil...')
+        } else {
+          // INSCRIPTION : Rediriger vers la page de connexion
+          alert('✅ Compte créé avec succès ! Veuillez maintenant vous connecter.')
+          setIsLogin(true) // Basculer vers le formulaire de connexion
+          // Pré-remplir l'email pour faciliter la connexion
+          setFormData({ 
+            email: formData.email, 
+            password: '', 
+            name: '' 
+          })
+        }
+      } else {
+        alert(`❌ Erreur: ${data.message}`)
+      }
+    } catch (error) {
+      alert('❌ Erreur de connexion au serveur')
+      console.error('Erreur:', error)
+    }
+  }
 
-            {/* Routes d'authentification (sans layout principal) */}
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
+  // Si l'utilisateur est connecté, afficher la page appropriée
+  if (isLoggedIn && user) {
+    if (currentPage === 'order') {
+      return <OrderPage user={user} onBack={handleBackToHome} />
+    }
+    if (currentPage === 'quote') {
+      return <QuotePage user={user} onBack={handleBackToHome} />
+    }
+    if (currentPage === 'projects') {
+      return <ProjectTrackingPage user={user} onBack={handleBackToHome} />
+    }
+    return <HomePage user={user} onLogout={handleLogout} onNavigateToOrder={handleNavigateToOrder} onNavigateToQuote={handleNavigateToQuote} onNavigateToProjects={handleNavigateToProjects} />
+  }
 
-            {/* Routes protégées */}
-            <Route
-              path="/dashboard/*"
-              element={
-                <ProtectedRoute>
-                  <DashboardPage />
-                </ProtectedRoute>
-              }
-            />
+  return (
+    <div style={{ minHeight: '100vh', padding: '20px' }}>
+      {/* Header */}
+      <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+        <h1 style={{ 
+          fontSize: '2.5rem', 
+          fontFamily: 'Poppins',
+          color: 'white',
+          marginBottom: '10px',
+          textShadow: '0 2px 10px rgba(0,0,0,0.3)'
+        }}>
+           MiaTech
+        </h1>
+        <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.1rem' }}>
+          Solutions Technologiques Innovantes
+        </p>
+      </div>
 
-            {/* Route 404 */}
-            <Route path="*" element={
-              <div className="min-h-screen flex items-center justify-center">
-                <div className="text-center">
-                  <h1 className="text-4xl font-bold text-gray-900">404</h1>
-                  <p className="text-gray-600 mt-2">Page non trouvée</p>
-                  <a href="/" className="btn-primary mt-4">
-                    Retour à l'accueil
-                  </a>
-                </div>
-              </div>
-            } />
-          </Routes>
+      {/* Form Container */}
+      <div style={{ 
+        maxWidth: '400px', 
+        margin: '0 auto',
+        background: 'rgba(255, 255, 255, 0.95)',
+        borderRadius: '20px',
+        padding: '40px',
+        boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
+        backdropFilter: 'blur(10px)'
+      }}>
+        
+        {/* Toggle Buttons */}
+        <div style={{ 
+          display: 'flex', 
+          backgroundColor: '#f1f5f9', 
+          borderRadius: '12px', 
+          padding: '4px',
+          marginBottom: '30px'
+        }}>
+          <button
+            onClick={() => setIsLogin(true)}
+            style={{
+              flex: 1,
+              padding: '12px',
+              borderRadius: '8px',
+              border: 'none',
+              backgroundColor: isLogin ? '#4f46e5' : 'transparent',
+              color: isLogin ? 'white' : '#64748b',
+              fontWeight: '500',
+              cursor: 'pointer',
+              transition: 'all 0.3s'
+            }}
+          >
+            Connexion
+          </button>
+          <button
+            onClick={() => setIsLogin(false)}
+            style={{
+              flex: 1,
+              padding: '12px',
+              borderRadius: '8px',
+              border: 'none',
+              backgroundColor: !isLogin ? '#4f46e5' : 'transparent',
+              color: !isLogin ? 'white' : '#64748b',
+              fontWeight: '500',
+              cursor: 'pointer',
+              transition: 'all 0.3s'
+            }}
+          >
+            Inscription
+          </button>
         </div>
-      </Router>
-    </QueryClientProvider>
-  );
+
+        {/* Form */}
+        <form onSubmit={handleSubmit}>
+          {!isLogin && (
+            <div style={{ marginBottom: '20px' }}>
+              <label style={{ 
+                display: 'block', 
+                marginBottom: '8px', 
+                fontWeight: '500', 
+                color: '#374151' 
+              }}>
+                Nom complet
+              </label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                className="input"
+                required={!isLogin}
+                placeholder="Votre nom complet"
+              />
+            </div>
+          )}
+
+          <div style={{ marginBottom: '20px' }}>
+            <label style={{ 
+              display: 'block', 
+              marginBottom: '8px', 
+              fontWeight: '500', 
+              color: '#374151' 
+            }}>
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              className="input"
+              required
+              placeholder="votre@email.com"
+            />
+          </div>
+
+          <div style={{ marginBottom: '30px' }}>
+            <label style={{ 
+              display: 'block', 
+              marginBottom: '8px', 
+              fontWeight: '500', 
+              color: '#374151' 
+            }}>
+              Mot de passe
+            </label>
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
+              className="input"
+              required
+              placeholder="••••••••"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="btn btn-primary"
+            style={{ 
+              width: '100%', 
+              fontSize: '1.1rem',
+              padding: '16px'
+            }}
+          >
+            {isLogin ? 'Se connecter' : "S'inscrire"}
+          </button>
+        </form>
+
+        {/* Footer */}
+        <div style={{ 
+          textAlign: 'center', 
+          marginTop: '20px', 
+          fontSize: '0.9rem', 
+          color: '#64748b' 
+        }}>
+          {isLogin ? "Pas encore de compte ?" : "Déjà un compte ?"}
+          <button
+            onClick={() => setIsLogin(!isLogin)}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#4f46e5',
+              fontWeight: '500',
+              cursor: 'pointer',
+              marginLeft: '5px',
+              textDecoration: 'underline'
+            }}
+          >
+            {isLogin ? "S'inscrire" : "Se connecter"}
+          </button>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default App;

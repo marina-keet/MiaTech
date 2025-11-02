@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration MiaTech - Validation des Commandes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .orders-container {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .order-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f3f4f6;
+            padding-bottom: 15px;
+        }
+        
+        .order-info h3 {
+            color: #1f2937;
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+        
+        .order-info p {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
+        .order-status {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+        
+        .status-pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .order-details {
+            margin-bottom: 20px;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .detail-value {
+            color: #4b5563;
+        }
+        
+        .description-box {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .description-box h4 {
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+        
+        .description-box p {
+            color: #4b5563;
+            line-height: 1.6;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .btn-validate {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+        }
+        
+        .btn-validate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+        }
+        
+        .btn-reject {
+            background: #f3f4f6;
+            color: #374151;
+            border: 2px solid #d1d5db;
+        }
+        
+        .btn-reject:hover {
+            background: #e5e7eb;
+        }
+        
+        .empty-state {
+            background: white;
+            border-radius: 15px;
+            padding: 60px 30px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .empty-state .icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .refresh-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+        }
+        
+        .refresh-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .loading {
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+            margin: 50px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ Administration MiaTech</h1>
+            <p>Validation des commandes clients</p>
+        </div>
+        
+        <div id="loading" class="loading">
+            ⏳ Chargement des commandes...
+        </div>
+        
+        <div id="ordersContainer" class="orders-container" style="display: none;">
+            <!-- Les commandes seront insérées ici -->
+        </div>
+        
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <div class="icon">✅</div>
+            <h3 style="color: #374151; margin-bottom: 10px;">Aucune commande en attente</h3>
+            <p style="color: #6b7280;">Toutes les commandes ont été traitées !</p>
+        </div>
+    </div>
+    
+    <button class="refresh-btn" onclick="loadOrders()" title="Actualiser">
+        🔄
+    </button>
+    
+    <script>
+        let orders = [];
+        
+        // Charger les commandes au démarrage
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrders();
+        });
+        
+        async function loadOrders() {
+            const loadingEl = document.getElementById('loading');
+            const containerEl = document.getElementById('ordersContainer');
+            const emptyStateEl = document.getElementById('emptyState');
+            
+            loadingEl.style.display = 'block';
+            containerEl.style.display = 'none';
+            emptyStateEl.style.display = 'none';
+            
+            try {
+                const response = await fetch('http://localhost:5000/api/admin/orders/pending');
+                const data = await response.json();
+                
+                orders = data.orders;
+                
+                if (orders.length === 0) {
+                    emptyStateEl.style.display = 'block';
+                } else {
+                    renderOrders();
+                    containerEl.style.display = 'grid';
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('❌ Erreur lors du chargement des commandes');
+            }
+            
+            loadingEl.style.display = 'none';
+        }
+        
+        function renderOrders() {
+            const container = document.getElementById('ordersContainer');
+            container.innerHTML = '';
+            
+            orders.forEach(order => {
+                const orderCard = createOrderCard(order);
+                container.appendChild(orderCard);
+            });
+        }
+        
+        function createOrderCard(order) {
+            const card = document.createElement('div');
+            card.className = 'order-card';
+            
+            const serviceNames = {
+                'web-dev': '💻 App Development',
+                'ui-ux': '🎨 UI/UX Design',
+                'poster': '🖼️ Conception d\'affiches',
+                'business-card': '💳 Cartes de visite',
+                'logo': '🏷️ Création de logos',
+                'branding': '🎨 Identité visuelle complète',
+                'others': '⚡ Autres services'
+            };
+            
+            const serviceName = serviceNames[order.serviceId] || 'Service inconnu';
+            const orderDate = new Date(order.createdAt).toLocaleDateString('fr-FR');
+            
+            card.innerHTML = `
+                <div class="order-header">
+                    <div class="order-info">
+                        <h3>Commande #${order.id}</h3>
+                        <p>📅 ${orderDate}</p>
+                    </div>
+                    <span class="order-status status-pending">⏳ En attente</span>
+                </div>
+                
+                <div class="order-details">
+                    <div class="detail-row">
+                        <span class="detail-label">👤 Client:</span>
+                        <span class="detail-value">ID ${order.userId}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">📦 Service:</span>
+                        <span class="detail-value">${serviceName}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">💰 Budget:</span>
+                        <span class="detail-value">${order.budget || 'Non spécifié'}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">📅 Délai souhaité:</span>
+                        <span class="detail-value">${order.deadline ? new Date(order.deadline).toLocaleDateString('fr-FR') : 'Non spécifié'}</span>
+                    </div>
+                </div>
+                
+                ${order.description ? `
+                <div class="description-box">
+                    <h4>📝 Description du projet:</h4>
+                    <p>${order.description}</p>
+                </div>
+                ` : ''}
+                
+                <div class="action-buttons">
+                    <button class="btn btn-reject" onclick="rejectOrder(${order.id})">
+                        ❌ Rejeter
+                    </button>
+                    <button class="btn btn-validate" onclick="validateOrder(${order.id})">
+                        ✅ Valider et créer le projet
+                    </button>
+                </div>
+            `;
+            
+            return card;
+        }
+        
+        async function validateOrder(orderId) {
+            if (!confirm('Êtes-vous sûr de vouloir valider cette commande et créer le projet correspondant ?')) {
+                return;
+            }
+            
+            try {
+                const response = await fetch(`http://localhost:5000/api/orders/${orderId}/validate`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    alert(`✅ Commande validée avec succès !\n\nProjet créé: ${data.project.title}\nLe client peut maintenant suivre l'avancement dans son espace.`);
+                    loadOrders(); // Recharger la liste
+                } else {
+                    const error = await response.json();
+                    alert(`❌ Erreur: ${error.message}`);
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('❌ Erreur lors de la validation');
+            }
+        }
+        
+        async function rejectOrder(orderId) {
+            const reason = prompt('Raison du rejet (optionnel):');
+            if (reason === null) return; // Annulé
+            
+            // Pour l'instant, on supprime juste la commande
+            // Dans un vrai système, on marquerait comme rejetée
+            alert('🗑️ Fonctionnalité de rejet en cours de développement');
+        }
+    </script>
+</body>
+</html>
