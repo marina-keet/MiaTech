@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2025-11-03T22:22:10.813Z",
+  "lastUpdate": "2025-11-03T22:39:43.083Z",
   "users": [
     {
       "id": 1,
@@ -86,7 +86,7 @@
       "email": "chancel@gmail.com",
       "name": "chancel lala",
       "role": "client",
-      "connectedAt": "2025-11-03T21:13:55.394Z",
+      "connectedAt": "2025-11-03T22:36:03.452Z",
       "status": "online"
     }
   ],

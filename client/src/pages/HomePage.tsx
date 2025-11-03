@@ -288,7 +288,7 @@ const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, 
                 fontWeight: '600',
                 color: '#3b82f6'
               }}>
-                À partir de $2500
+                À partir de $700
               </div>
             </div>
 
@@ -345,7 +345,7 @@ const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, 
                 fontWeight: '600',
                 color: '#8b5cf6'
               }}>
-                À partir de $1500
+                À partir de $300
               </div>
             </div>
 
@@ -460,6 +460,54 @@ const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, 
                 color: '#10b981'
               }}>
                 À partir de $150
+              </div>
+            </div>
+
+            {/* Logo professionnel */}
+            <div style={{
+              background: 'white',
+              borderRadius: '16px',
+              padding: '25px',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+              border: '1px solid #f1f5f9',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px)'
+              e.currentTarget.style.boxShadow = '0 10px 40px rgba(0,0,0,0.15)'
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)'
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)'
+            }}>
+              <div style={{
+                fontSize: '3rem',
+                marginBottom: '15px'
+              }}>🏷️</div>
+              <h3 style={{
+                fontSize: '1.3rem',
+                fontWeight: '600',
+                marginBottom: '10px',
+                color: '#1f2937'
+              }}>
+                Logo Professionnel
+              </h3>
+              <p style={{
+                color: '#6b7280',
+                fontSize: '0.95rem',
+                lineHeight: '1.5',
+                marginBottom: '15px'
+              }}>
+                Logos uniques et mémorables pour votre marque (prix négociable)
+              </p>
+              <div style={{
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                color: '#f59e0b'
+              }}>
+                À partir de $80
               </div>
             </div>
 

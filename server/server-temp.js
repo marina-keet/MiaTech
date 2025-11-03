@@ -1904,11 +1904,11 @@ app.post('/api/orders/:orderId/validate', (req, res) => {
 // Fonctions utilitaires pour créer les projets
 function getServiceName(serviceId) {
   const services = {
-    'web-dev': '💻 App Development',
+    'web-dev': '💻 Développement Site Web',
     'ui-ux': '🎨 UI/UX Design',
     'poster': '🖼️ Conception d\'affiches',
     'business-card': '💳 Cartes de visite',
-    'logo': '🏷️ Création de logos',
+    'logo': '🏷️ Logo Professionnel',
     'branding': '🎨 Identité visuelle complète',
     'others': '⚡ Autres services'
   };
@@ -1917,11 +1917,11 @@ function getServiceName(serviceId) {
 
 function getProjectTitle(serviceId) {
   const titles = {
-    'web-dev': 'Développement Application Web',
+    'web-dev': 'Développement Site Web',
     'ui-ux': 'Design UI/UX Personnalisé',
     'poster': 'Création d\'Affiches Professionnelles',
     'business-card': 'Cartes de Visite sur Mesure',
-    'logo': 'Création de Logo Unique',
+    'logo': 'Logo Professionnel Unique',
     'branding': 'Identité Visuelle Complète',
     'others': 'Projet Personnalisé'
   };
@@ -2816,10 +2816,11 @@ app.post('/api/payments/generate-invoice', (req, res) => {
     
     // Ligne du service
     const serviceNames = {
-      'web-dev': 'Développement Application Web',
+      'web-dev': 'Développement Site Web',
       'ui-ux': 'Design UI/UX',
       'poster': 'Conception d\'Affiches',
       'business-card': 'Cartes de Visite',
+      'logo': 'Logo Professionnel',
       'others': 'Service Personnalisé'
     };
     

@@ -23,11 +23,11 @@ const QuotePage: React.FC<QuotePageProps> = ({ user, onBack }) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const services = [
-    { id: 'web-dev', name: '💻 App Development', basePrice: 2500 },
-    { id: 'ui-ux', name: '🎨 UI/UX Design', basePrice: 1500 },
-    { id: 'poster', name: '🖼️ Conception d\'affiches', basePrice: 300 },
+    { id: 'web-dev', name: '💻 Développement Site Web', basePrice: 700 },
+    { id: 'ui-ux', name: '🎨 UI/UX Design', basePrice: 300 },
+    { id: 'poster', name: '🖼️ Conception d\'affiches', basePrice: 150 },
+    { id: 'logo', name: '🏷️ Logo Professionnel', basePrice: 80 },
     { id: 'business-card', name: '💳 Cartes de visite', basePrice: 150 },
-    { id: 'logo', name: '🏷️ Création de logos', basePrice: 500 },
     { id: 'branding', name: '🎨 Identité visuelle complète', basePrice: 800 },
     { id: 'others', name: '⚡ Autres services', basePrice: 0 }
   ]

@@ -3,14 +3,14 @@ nohup: les entrées sont ignorées
 � 6 utilisateurs chargés depuis ./data/clients.json
 👤 4 clients trouvés
 🔌 4 connexions restaurées
-📅 Dernière mise à jour: 2025-11-03T22:14:58.209Z
+📅 Dernière mise à jour: 2025-11-03T22:32:40.996Z
 📂 2 messages chargés
 📝 0 commandes chargées
 📊 0 projets chargés
 📈 Statistiques chargées
 📊 Paramètres chargés depuis ./data/settings.json
 🏢 Entreprise: MiaTech
-📋 1 devis chargés
+📋 0 devis chargés
 ✅ Données chargées avec succès
 💾 Auto-sauvegarde activée (toutes les 30 secondes)
 🚀 ====================================
@@ -22,28 +22,9 @@ nohup: les entrées sont ignorées
    🛡️  Gestion d'erreurs: Activée
    🔄 Auto-restart: Disponible
 ====================================
-2025-11-03T22:16:26.237Z - POST /api/admin/login
-🔐 Tentative connexion admin: admin@miatech.com
-✅ Connexion avec identifiants par défaut
-✅ Connexion admin réussie: admin@miatech.com
-2025-11-03T22:16:26.264Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzYyMjA4MTg2LCJleHAiOjE3NjIyOTQ1ODZ9.BHpFgFnohizKfUj8yqvxzWtX5gJH0xlpKJOZubeCb0k
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'super_admin',
-  iat: 1762208186,
-  exp: 1762294586
-}
-🎭 Rôle utilisateur: super_admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:16:27.221Z - GET /api/chat/messages
+2025-11-03T22:33:24.479Z - GET /api/chat/messages
 📬 Chargement des messages de chat
-2025-11-03T22:16:27.367Z - GET /api/admin/notifications
+2025-11-03T22:33:24.631Z - GET /api/admin/notifications
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
 🔍 Vérification token...
@@ -58,54 +39,28 @@ nohup: les entrées sont ignorées
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
 📢 Récupération des notifications admin
-2025-11-03T22:16:39.749Z - POST /api/admin/login
-🔐 Tentative connexion admin: admin@miatech.com
-✅ Connexion avec identifiants par défaut
-✅ Connexion admin réussie: admin@miatech.com
-2025-11-03T22:16:39.768Z - PUT /api/admin/messages/1/read
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzYyMjA4MTk5LCJleHAiOjE3NjIyOTQ1OTl9.aVeuSIPh8s9HO17SKqpJAwXNmTtJyDi8xPBvgmKu7v4
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'super_admin',
-  iat: 1762208199,
-  exp: 1762294599
-}
-🎭 Rôle utilisateur: super_admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-💾 2 messages sauvegardés
-📧 Message #1 marqué comme lu par admin@miatech.com
 💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
 💾 2 messages sauvegardés
 📝 0 commandes sauvegardées
 📊 0 projets sauvegardés
 💾 Paramètres sauvegardés dans ./data/settings.json
-💾 1 devis sauvegardés
-2025-11-03T22:16:48.500Z - POST /api/admin/login
-🔐 Tentative connexion admin: admin@miatech.com
-✅ Connexion avec identifiants par défaut
-✅ Connexion admin réussie: admin@miatech.com
-2025-11-03T22:16:48.515Z - PUT /api/admin/messages/read-all
+💾 0 devis sauvegardés
+2025-11-03T22:33:49.090Z - GET /api/admin/quotes
 🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzYyMjA4MjA4LCJleHAiOjE3NjIyOTQ2MDh9.ym47BES-ukVpvwPzqpjHkdN0zVU2QktvOTYxIScHiFQ
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
 ✅ Token décodé: {
   id: 999,
   email: 'admin@miatech.com',
-  role: 'super_admin',
-  iat: 1762208208,
-  exp: 1762294608
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
 }
-🎭 Rôle utilisateur: super_admin
+🎭 Rôle utilisateur: admin
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
-📧 0 messages marqués comme lus par admin@miatech.com
-2025-11-03T22:16:53.005Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:16:53.008Z - GET /api/admin/notifications
+📋 Admin consultation devis: 0 demandes
+2025-11-03T22:33:49.103Z - GET /api/admin/notifications
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
@@ -120,9 +75,24 @@ nohup: les entrées sont ignorées
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
 📢 Récupération des notifications admin
-2025-11-03T22:16:54.129Z - GET /admin-login
-2025-11-03T22:16:54.367Z - GET /admin
-2025-11-03T22:16:54.519Z - GET /api/admin/verify
+2025-11-03T22:33:52.712Z - GET /api/admin/settings
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+📊 Récupération des paramètres entreprise
+2025-11-03T22:33:54.473Z - GET /api/chat/messages
+📬 Chargement des messages de chat
+2025-11-03T22:33:54.634Z - GET /api/admin/notifications
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
 🔍 Vérification token...
@@ -136,7 +106,47 @@ nohup: les entrées sont ignorées
 🎭 Rôle utilisateur: admin
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
-2025-11-03T22:16:54.538Z - GET /api/admin/all-clients
+📢 Récupération des notifications admin
+2025-11-03T22:34:00.788Z - GET /api/admin/settings
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+📊 Récupération des paramètres entreprise
+2025-11-03T22:34:01.172Z - GET /api/admin/notifications
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+📢 Récupération des notifications admin
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+2025-11-03T22:34:24.389Z - GET /admin-dashboard-protected.html
+2025-11-03T22:34:24.481Z - GET /api/chat/messages
+📬 Chargement des messages de chat
+2025-11-03T22:34:24.631Z - GET /api/admin/notifications
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
 🔍 Vérification token...
@@ -146,58 +156,81 @@ nohup: les entrées sont ignorées
   role: 'admin',
   iat: 1762169160,
   exp: 1762255560
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+📢 Récupération des notifications admin
+2025-11-03T22:34:25.176Z - GET /api/admin/verify
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+2025-11-03T22:34:26.220Z - GET /api/admin/all-clients
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
 }
 🎭 Rôle utilisateur: admin
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
 📊 Récupération de tous les clients pour admin dashboard...
 📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
-2025-11-03T22:16:54.545Z - GET /api/orders
-2025-11-03T22:16:54.548Z - GET /api/admin/payments
+2025-11-03T22:34:26.225Z - GET /api/admin/payments
 💰 Consultation des paiements - Total: 0
-2025-11-03T22:16:54.632Z - GET /api/admin/notifications
+2025-11-03T22:34:26.227Z - GET /api/orders
+2025-11-03T22:34:26.290Z - GET /api/admin/notifications
 🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
 ✅ Token décodé: {
-  id: 2,
-  email: 'marina@gmail.com',
+  id: 999,
+  email: 'admin@miatech.com',
   role: 'admin',
-  iat: 1762169160,
-  exp: 1762255560
+  iat: 1762187683,
+  exp: 1762274083
 }
 🎭 Rôle utilisateur: admin
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
 📢 Récupération des notifications admin
-2025-11-03T22:17:02.812Z - GET /api/chat/messages
-📬 Chargement des messages de chat
+2025-11-03T22:34:29.900Z - GET /api/admin/settings
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+📊 Récupération des paramètres entreprise
 💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
 💾 2 messages sauvegardés
 📝 0 commandes sauvegardées
 📊 0 projets sauvegardés
 💾 Paramètres sauvegardés dans ./data/settings.json
-💾 1 devis sauvegardés
-2025-11-03T22:17:24.486Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:17:24.651Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 2,
-  email: 'marina@gmail.com',
-  role: 'admin',
-  iat: 1762169160,
-  exp: 1762255560
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:17:27.228Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:17:27.258Z - GET /api/admin/notifications
+💾 0 devis sauvegardés
+2025-11-03T22:34:50.480Z - PUT /api/admin/settings
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
@@ -211,48 +244,28 @@ nohup: les entrées sont ignorées
 🎭 Rôle utilisateur: admin
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:17:30.786Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:17:31.171Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
+💾 Sauvegarde des paramètres: {
+  name: 'MiaTech',
+  email: 'contact@miatech.com',
+  phone: '+33 1 23 45 67 89',
+  address: '123 Rue de la Tech, 75001 Paris',
+  website: 'https://miatech.com',
+  description: 'Cabinet de technologie spécialisé en développement web'
 }
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
-💾 2 messages sauvegardés
-📝 0 commandes sauvegardées
-📊 0 projets sauvegardés
 💾 Paramètres sauvegardés dans ./data/settings.json
-💾 1 devis sauvegardés
-2025-11-03T22:17:46.226Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
+✅ Paramètres sauvegardés et persistés: {
+  name: 'MiaTech',
+  email: 'contact@miatech.com',
+  phone: '+33 1 23 45 67 89',
+  address: '123 Rue de la Tech, 75001 Paris',
+  website: 'https://miatech.com',
+  description: 'Cabinet de technologie spécialisé en développement web',
+  updatedAt: '2025-11-03T22:34:50.482Z',
+  updatedBy: 999
 }
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:17:54.469Z - GET /api/chat/messages
+2025-11-03T22:34:54.468Z - GET /api/chat/messages
 📬 Chargement des messages de chat
-2025-11-03T22:17:54.631Z - GET /api/admin/notifications
+2025-11-03T22:34:54.630Z - GET /api/admin/notifications
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
 🔍 Vérification token...
@@ -267,7 +280,22 @@ nohup: les entrées sont ignorées
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
 📢 Récupération des notifications admin
-2025-11-03T22:17:57.895Z - GET /api/admin/notifications
+2025-11-03T22:34:55.159Z - GET /api/admin/settings
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+📊 Récupération des paramètres entreprise
+2025-11-03T22:34:56.291Z - GET /api/admin/notifications
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
@@ -282,7 +310,22 @@ nohup: les entrées sont ignorées
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
 📢 Récupération des notifications admin
-2025-11-03T22:18:00.788Z - GET /api/admin/all-clients
+2025-11-03T22:34:58.524Z - GET /admin-dashboard-protected.html
+2025-11-03T22:34:58.779Z - GET /api/admin/verify
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+2025-11-03T22:34:58.927Z - GET /api/admin/all-clients
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
@@ -298,10 +341,10 @@ nohup: les entrées sont ignorées
 ✅ Authentification admin réussie
 📊 Récupération de tous les clients pour admin dashboard...
 📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
-2025-11-03T22:18:00.794Z - GET /api/orders
-2025-11-03T22:18:00.797Z - GET /api/admin/payments
+2025-11-03T22:34:58.931Z - GET /api/orders
+2025-11-03T22:34:58.934Z - GET /api/admin/payments
 💰 Consultation des paiements - Total: 0
-2025-11-03T22:18:01.172Z - GET /api/admin/notifications
+2025-11-03T22:34:58.971Z - GET /api/admin/notifications
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
@@ -316,30 +359,7 @@ nohup: les entrées sont ignorées
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
 📢 Récupération des notifications admin
-💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
-💾 2 messages sauvegardés
-📝 0 commandes sauvegardées
-📊 0 projets sauvegardés
-💾 Paramètres sauvegardés dans ./data/settings.json
-💾 1 devis sauvegardés
-2025-11-03T22:18:24.473Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:18:24.630Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 2,
-  email: 'marina@gmail.com',
-  role: 'admin',
-  iat: 1762169160,
-  exp: 1762255560
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:18:30.790Z - GET /api/admin/all-clients
+2025-11-03T22:35:01.081Z - GET /api/admin/settings
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
@@ -353,12 +373,8 @@ nohup: les entrées sont ignorées
 🎭 Rôle utilisateur: admin
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
-📊 Récupération de tous les clients pour admin dashboard...
-📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
-2025-11-03T22:18:30.792Z - GET /api/orders
-2025-11-03T22:18:30.793Z - GET /api/admin/payments
-💰 Consultation des paiements - Total: 0
-2025-11-03T22:18:31.172Z - GET /api/admin/notifications
+📊 Récupération des paramètres entreprise
+2025-11-03T22:35:09.997Z - GET /api/admin/projects
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
@@ -372,213 +388,7 @@ nohup: les entrées sont ignorées
 🎭 Rôle utilisateur: admin
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
-📢 Récupération des notifications admin
-💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
-💾 2 messages sauvegardés
-📝 0 commandes sauvegardées
-📊 0 projets sauvegardés
-💾 Paramètres sauvegardés dans ./data/settings.json
-💾 1 devis sauvegardés
-2025-11-03T22:18:43.672Z - GET /api/admin/all-clients
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération de tous les clients pour admin dashboard...
-📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
-2025-11-03T22:18:54.471Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:18:54.630Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 2,
-  email: 'marina@gmail.com',
-  role: 'admin',
-  iat: 1762169160,
-  exp: 1762255560
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:19:00.785Z - GET /api/admin/all-clients
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération de tous les clients pour admin dashboard...
-📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
-2025-11-03T22:19:01.170Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
-💾 2 messages sauvegardés
-📝 0 commandes sauvegardées
-📊 0 projets sauvegardés
-💾 Paramètres sauvegardés dans ./data/settings.json
-💾 1 devis sauvegardés
-2025-11-03T22:19:13.813Z - GET /api/admin/team-members
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-👥 Récupération équipe complète: 2 membres
-2025-11-03T22:19:24.468Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:19:24.634Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 2,
-  email: 'marina@gmail.com',
-  role: 'admin',
-  iat: 1762169160,
-  exp: 1762255560
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:19:30.784Z - GET /api/admin/team-members
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-👥 Récupération équipe complète: 2 membres
-2025-11-03T22:19:31.169Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
-💾 2 messages sauvegardés
-📝 0 commandes sauvegardées
-📊 0 projets sauvegardés
-💾 Paramètres sauvegardés dans ./data/settings.json
-💾 1 devis sauvegardés
-2025-11-03T22:19:54.469Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:19:54.632Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 2,
-  email: 'marina@gmail.com',
-  role: 'admin',
-  iat: 1762169160,
-  exp: 1762255560
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:20:00.786Z - GET /api/admin/team-members
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-👥 Récupération équipe complète: 2 membres
-2025-11-03T22:20:01.171Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:20:06.870Z - GET /api/admin/projects
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-2025-11-03T22:20:06.895Z - GET /api/admin/all-clients
+2025-11-03T22:35:10.063Z - GET /api/admin/all-clients
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
@@ -599,41 +409,10 @@ nohup: les entrées sont ignorées
 📝 0 commandes sauvegardées
 📊 0 projets sauvegardés
 💾 Paramètres sauvegardés dans ./data/settings.json
-💾 1 devis sauvegardés
-2025-11-03T22:20:17.742Z - GET /api/admin/quotes
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📋 Admin consultation devis: 1 demandes
-2025-11-03T22:20:23.176Z - DELETE /api/admin/quotes/1
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
 💾 0 devis sauvegardés
-🗑️ Devis #1 supprimé par admin: admin@miatech.com
-2025-11-03T22:20:24.472Z - GET /api/chat/messages
+2025-11-03T22:35:24.472Z - GET /api/chat/messages
 📬 Chargement des messages de chat
-2025-11-03T22:20:24.630Z - GET /api/admin/notifications
+2025-11-03T22:35:24.630Z - GET /api/admin/notifications
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
 🔍 Vérification token...
@@ -648,7 +427,7 @@ nohup: les entrées sont ignorées
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
 📢 Récupération des notifications admin
-2025-11-03T22:20:30.073Z - GET /api/admin/quotes
+2025-11-03T22:35:28.775Z - GET /api/admin/projects
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
@@ -662,8 +441,7 @@ nohup: les entrées sont ignorées
 🎭 Rôle utilisateur: admin
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
-📋 Admin consultation devis: 0 demandes
-2025-11-03T22:20:30.786Z - GET /api/admin/quotes
+2025-11-03T22:35:28.788Z - GET /api/admin/all-clients
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
@@ -677,8 +455,9 @@ nohup: les entrées sont ignorées
 🎭 Rôle utilisateur: admin
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
-📋 Admin consultation devis: 0 demandes
-2025-11-03T22:20:31.172Z - GET /api/admin/notifications
+📊 Récupération de tous les clients pour admin dashboard...
+📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
+2025-11-03T22:35:28.986Z - GET /api/admin/notifications
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
@@ -699,24 +478,7 @@ nohup: les entrées sont ignorées
 📊 0 projets sauvegardés
 💾 Paramètres sauvegardés dans ./data/settings.json
 💾 0 devis sauvegardés
-2025-11-03T22:20:54.469Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:20:54.630Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 2,
-  email: 'marina@gmail.com',
-  role: 'admin',
-  iat: 1762169160,
-  exp: 1762255560
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:21:00.996Z - GET /api/admin/quotes
+2025-11-03T22:35:59.011Z - GET /api/admin/projects
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
@@ -730,8 +492,7 @@ nohup: les entrées sont ignorées
 🎭 Rôle utilisateur: admin
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
-📋 Admin consultation devis: 0 demandes
-2025-11-03T22:21:02.011Z - GET /api/admin/notifications
+2025-11-03T22:35:59.026Z - GET /api/admin/notifications
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
@@ -746,31 +507,32 @@ nohup: les entrées sont ignorées
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
 📢 Récupération des notifications admin
-💚 Serveur en vie - 23:21:10
+2025-11-03T22:35:59.061Z - GET /api/admin/all-clients
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+📊 Récupération de tous les clients pour admin dashboard...
+📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
+2025-11-03T22:36:03.005Z - POST /api/auth/login
+🔑 Connexion - données: { email: 'chancel@gmail.com' }
+✅ Connexion réussie et sauvegardée: chancel@gmail.com
 💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
 💾 2 messages sauvegardés
 📝 0 commandes sauvegardées
 📊 0 projets sauvegardés
 💾 Paramètres sauvegardés dans ./data/settings.json
 💾 0 devis sauvegardés
-2025-11-03T22:21:24.469Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:21:24.634Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 2,
-  email: 'marina@gmail.com',
-  role: 'admin',
-  iat: 1762169160,
-  exp: 1762255560
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:21:30.996Z - GET /api/admin/quotes
+2025-11-03T22:36:28.997Z - GET /api/admin/projects
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
@@ -784,8 +546,7 @@ nohup: les entrées sont ignorées
 🎭 Rôle utilisateur: admin
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
-📋 Admin consultation devis: 0 demandes
-2025-11-03T22:21:31.999Z - GET /api/admin/notifications
+2025-11-03T22:36:29.000Z - GET /api/admin/notifications
 🔐 verifyAdmin appelé
 📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
@@ -800,49 +561,242 @@ nohup: les entrées sont ignorées
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
 📢 Récupération des notifications admin
+2025-11-03T22:36:29.006Z - GET /api/admin/all-clients
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+📊 Récupération de tous les clients pour admin dashboard...
+📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
 💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
 💾 2 messages sauvegardés
 📝 0 commandes sauvegardées
 📊 0 projets sauvegardés
 💾 Paramètres sauvegardés dans ./data/settings.json
 💾 0 devis sauvegardés
-2025-11-03T22:21:54.472Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:21:54.637Z - GET /api/admin/notifications
+2025-11-03T22:36:59.002Z - GET /api/admin/projects
 🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
 ✅ Token décodé: {
-  id: 2,
-  email: 'marina@gmail.com',
+  id: 999,
+  email: 'admin@miatech.com',
   role: 'admin',
-  iat: 1762169160,
-  exp: 1762255560
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+2025-11-03T22:36:59.005Z - GET /api/admin/notifications
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
 }
 🎭 Rôle utilisateur: admin
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
 📢 Récupération des notifications admin
+2025-11-03T22:36:59.010Z - GET /api/admin/all-clients
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+📊 Récupération de tous les clients pour admin dashboard...
+📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
 💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
 💾 2 messages sauvegardés
 📝 0 commandes sauvegardées
 📊 0 projets sauvegardés
 💾 Paramètres sauvegardés dans ./data/settings.json
 💾 0 devis sauvegardés
-2025-11-03T22:22:24.469Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:22:24.630Z - GET /api/admin/notifications
+2025-11-03T22:37:28.996Z - GET /api/admin/projects
 🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
 🔍 Vérification token...
 ✅ Token décodé: {
-  id: 2,
-  email: 'marina@gmail.com',
+  id: 999,
+  email: 'admin@miatech.com',
   role: 'admin',
-  iat: 1762169160,
-  exp: 1762255560
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+2025-11-03T22:37:28.999Z - GET /api/admin/notifications
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
 }
 🎭 Rôle utilisateur: admin
 ✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
 ✅ Authentification admin réussie
 📢 Récupération des notifications admin
+2025-11-03T22:37:29.007Z - GET /api/admin/all-clients
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+📊 Récupération de tous les clients pour admin dashboard...
+📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+2025-11-03T22:37:58.997Z - GET /api/admin/projects
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+2025-11-03T22:37:59.003Z - GET /api/admin/notifications
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+📢 Récupération des notifications admin
+2025-11-03T22:37:59.067Z - GET /api/admin/all-clients
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+📊 Récupération de tous les clients pour admin dashboard...
+📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
+💚 Serveur en vie - 23:38:12
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+2025-11-03T22:38:53.009Z - GET /api/admin/projects
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+2025-11-03T22:38:53.212Z - GET /api/admin/notifications
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+📢 Récupération des notifications admin
+2025-11-03T22:38:53.219Z - GET /api/admin/all-clients
+🔐 verifyAdmin appelé
+📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
+🔍 Vérification token...
+✅ Token décodé: {
+  id: 999,
+  email: 'admin@miatech.com',
+  role: 'admin',
+  iat: 1762187683,
+  exp: 1762274083
+}
+🎭 Rôle utilisateur: admin
+✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
+✅ Authentification admin réussie
+📊 Récupération de tous les clients pour admin dashboard...
+📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés

@@ -27,18 +27,20 @@ const OrderPage: React.FC<OrderPageProps> = ({ user, onBack, onNavigateToPayment
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const services = [
-    { id: 'web-dev', name: '💻 App Development', price: '$2500' },
-    { id: 'ui-ux', name: '🎨 UI/UX Design', price: '$1500' },
-    { id: 'poster', name: '🖼️ Conception d\'affiches', price: '$300' },
+    { id: 'web-dev', name: '💻 Développement Site Web', price: '$700' },
+    { id: 'ui-ux', name: '🎨 UI/UX Design', price: '$300' },
+    { id: 'poster', name: '🖼️ Conception d\'affiches', price: '$150' },
+    { id: 'logo', name: '🏷️ Logo Professionnel', price: '$80 (négociable)' },
     { id: 'business-card', name: '💳 Cartes de visite', price: '$150' },
     { id: 'others', name: '⚡ Autres services', price: 'Sur devis' }
   ]
 
   const getServicePrice = (serviceId: string): number => {
     const prices: { [key: string]: number } = {
-      'web-dev': 2500,
-      'ui-ux': 1500,
-      'poster': 300,
+      'web-dev': 700,
+      'ui-ux': 300,
+      'poster': 150,
+      'logo': 80,
       'business-card': 150,
       'others': 0
     }
@@ -276,7 +278,7 @@ const OrderPage: React.FC<OrderPageProps> = ({ user, onBack, onNavigateToPayment
                 type="text"
                 value={budget}
                 onChange={(e) => setBudget(e.target.value)}
-                placeholder="Ex: $2000 - $5000"
+                placeholder="Ex: $300 - $1500"
                 style={{
                   width: '100%',
                   padding: '12px',
