@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiaTech - Connexion Admin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            color: #4f46e5;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo p {
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #374151;
+            font-size: 0.9rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .btn {
+            width: 100%;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .alert {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .alert-error {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        .alert-success {
+            background: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        .admin-info {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #4f46e5;
+        }
+
+        .admin-info h3 {
+            color: #4f46e5;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .admin-info p {
+            color: #64748b;
+            font-size: 0.8rem;
+            margin: 0.25rem 0;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ffffff4d;
+            border-radius: 50%;
+            border-top-color: #ffffff;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 0.5rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: #64748b;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .logo h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <img src="miatech-logo.svg" alt="MiaTech Logo" style="height: 80px; margin-bottom: 10px;">
+            <p>Administration</p>
+        </div>
+
+        <div class="admin-info">
+            <h3>🔐 Accès Administrateur</h3>
+            <p><strong>Email:</strong> admin@miatech.com</p>
+            <p><strong>Mot de passe:</strong> admin123</p>
+            <p><em>Identifiants par défaut pour les tests</em></p>
+        </div>
+
+        <div id="alert" style="display: none;"></div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label class="form-label" for="email">
+                    📧 Adresse email
+                </label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    class="form-input" 
+                    placeholder="admin@miatech.com"
+                    value="admin@miatech.com"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="password">
+                    🔒 Mot de passe
+                </label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    class="form-input" 
+                    placeholder="Votre mot de passe"
+                    value="admin123"
+                    required
+                />
+            </div>
+
+            <button type="submit" class="btn" id="loginBtn">
+                Se connecter
+            </button>
+        </form>
+
+        <div style="text-align: center; margin: 1.5rem 0; padding: 1rem; background: #f8fafc; border-radius: 8px; border: 1px dashed #d1d5db;">
+            <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 0.5rem;">Pas encore de compte administrateur ?</p>
+            <a href="/admin-create" style="color: #4f46e5; font-weight: 600; text-decoration: none; font-size: 0.95rem;">
+                ✨ Créer un compte administrateur
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>MiaTech Dashboard v1.0</p>
+            <p>© 2025 - Tous droits réservés</p>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const loginBtn = document.getElementById('loginBtn');
+        const alert = document.getElementById('alert');
+
+        // Check if already logged in
+        if (localStorage.getItem('adminToken')) {
+            window.location.href = '/admin';
+        }
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Show loading
+            loginBtn.disabled = true;
+            loginBtn.innerHTML = '<span class="spinner"></span>Connexion en cours...';
+            hideAlert();
+            
+            try {
+                const response = await fetch('/api/admin/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok && data.success) {
+                    // Store token
+                    localStorage.setItem('adminToken', data.token);
+                    localStorage.setItem('adminUser', JSON.stringify(data.user));
+                    
+                    showAlert('✅ Connexion réussie ! Redirection...', 'success');
+                    
+                    // Redirect after short delay
+                    setTimeout(() => {
+                        window.location.href = '/admin';
+                    }, 1000);
+                    
+                } else {
+                    showAlert('❌ ' + (data.message || 'Identifiants incorrects'), 'error');
+                }
+                
+            } catch (error) {
+                console.error('Erreur connexion:', error);
+                showAlert('❌ Erreur de connexion. Vérifiez votre connexion internet.', 'error');
+            }
+            
+            // Reset button
+            loginBtn.disabled = false;
+            loginBtn.innerHTML = 'Se connecter';
+        });
+
+        function showAlert(message, type) {
+            alert.className = `alert alert-${type}`;
+            alert.textContent = message;
+            alert.style.display = 'block';
+        }
+
+        function hideAlert() {
+            alert.style.display = 'none';
+        }
+
+        // Auto-focus on email field
+        document.getElementById('email').focus();
+
+        // Handle Enter key
+        document.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                loginForm.dispatchEvent(new Event('submit'));
+            }
+        });
+    </script>
+</body>
+</html>

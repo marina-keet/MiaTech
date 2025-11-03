@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur Client - MiaTech</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #f8fafc;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            margin: 0.5rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-connect { background: #10b981; color: white; }
+        .btn-disconnect { background: #ef4444; color: white; }
+        .btn-message { background: #3b82f6; color: white; }
+        .status {
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 6px;
+            border-left: 4px solid #10b981;
+            background: #f0fdf4;
+        }
+        .clients-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .client-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 1rem;
+            background: white;
+        }
+        .client-card.online {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+        .client-name {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .client-status {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Simulateur de Clients MiaTech</h1>
+        <p>Utilisez cet outil pour simuler des clients qui se connectent/déconnectent de la plateforme.</p>
+        
+        <div class="status" id="status">
+            ℹ️ Prêt à simuler des connexions clients
+        </div>
+
+        <div>
+            <h3>Actions Rapides</h3>
+            <button class="btn btn-connect" onclick="connectMultipleClients()">🚀 Connecter 5 Clients de Test</button>
+            <button class="btn btn-disconnect" onclick="disconnectAllClients()">🛑 Déconnecter Tous</button>
+            <button class="btn btn-message" onclick="sendRandomMessages()">💬 Envoyer Messages Aléatoires</button>
+        </div>
+
+        <div>
+            <h3>🆕 Créer Nouveau Compte Client</h3>
+            <input type="text" id="newClientName" placeholder="Nom du client" style="padding: 0.5rem; margin: 0.25rem; border: 1px solid #d1d5db; border-radius: 4px;">
+            <input type="email" id="newClientEmail" placeholder="Email du client" style="padding: 0.5rem; margin: 0.25rem; border: 1px solid #d1d5db; border-radius: 4px;">
+            <input type="password" id="newClientPassword" placeholder="Mot de passe" style="padding: 0.5rem; margin: 0.25rem; border: 1px solid #d1d5db; border-radius: 4px;">
+            <input type="tel" id="newClientPhone" placeholder="Téléphone (optionnel)" style="padding: 0.5rem; margin: 0.25rem; border: 1px solid #d1d5db; border-radius: 4px;">
+            <br>
+            <button class="btn btn-connect" onclick="registerNewClient()">📝 Créer Compte</button>
+        </div>
+
+        <div>
+            <h3>Client Existant</h3>
+            <input type="email" id="clientEmail" placeholder="Email du client" style="padding: 0.5rem; margin: 0.25rem; border: 1px solid #d1d5db; border-radius: 4px;">
+            <input type="password" id="clientPassword" placeholder="Mot de passe" style="padding: 0.5rem; margin: 0.25rem; border: 1px solid #d1d5db; border-radius: 4px;">
+            <br>
+            <button class="btn btn-connect" onclick="connectCustomClient()">✨ Connecter Client</button>
+        </div>
+
+        <div class="clients-list" id="clientsList">
+            <!-- Les clients simulés apparaîtront ici -->
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:5000';
+        let simulatedClients = [];
+
+        // Clients de test prédéfinis
+        const testClients = [
+            { name: 'Sophie Martin', email: 'sophie.martin@email.com' },
+            { name: 'Jean Dupont', email: 'jean.dupont@gmail.com' },
+            { name: 'Marie Claire', email: 'marie.claire@hotmail.com' },
+            { name: 'Pierre Durand', email: 'pierre.durand@yahoo.fr' },
+            { name: 'Emma Laurent', email: 'emma.laurent@outlook.com' }
+        ];
+
+        function updateStatus(message, isError = false) {
+            const statusEl = document.getElementById('status');
+            statusEl.textContent = message;
+            statusEl.style.borderColor = isError ? '#ef4444' : '#10b981';
+            statusEl.style.background = isError ? '#fef2f2' : '#f0fdf4';
+        }
+
+        async function connectClient(name, email) {
+            try {
+                const clientId = `client_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`;
+                
+                const response = await fetch(`${API_BASE}/api/client/connect`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        clientId: clientId,
+                        clientName: name,
+                        clientEmail: email,
+                        userAgent: navigator.userAgent
+                    })
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    simulatedClients.push({
+                        id: clientId,
+                        name: name,
+                        email: email,
+                        connected: true,
+                        connectedAt: new Date()
+                    });
+                    
+                    updateStatus(`✅ Client "${name}" connecté avec succès`);
+                    updateClientsList();
+                    
+                    // Envoyer un message automatique après connexion
+                    setTimeout(() => {
+                        sendMessage(clientId, name, `Bonjour, je suis ${name} et je viens de me connecter !`);
+                    }, 1000);
+                    
+                } else {
+                    throw new Error(result.message);
+                }
+            } catch (error) {
+                updateStatus(`❌ Erreur connexion: ${error.message}`, true);
+            }
+        }
+
+        async function disconnectClient(clientId, name) {
+            try {
+                await fetch(`${API_BASE}/api/client/disconnect`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ clientId: clientId })
+                });
+
+                simulatedClients = simulatedClients.map(c => 
+                    c.id === clientId ? { ...c, connected: false } : c
+                );
+                
+                updateStatus(`👋 Client "${name}" déconnecté`);
+                updateClientsList();
+                
+            } catch (error) {
+                updateStatus(`❌ Erreur déconnexion: ${error.message}`, true);
+            }
+        }
+
+        async function sendMessage(clientId, clientName, message) {
+            try {
+                await fetch(`${API_BASE}/api/chat/send`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        senderId: clientId,
+                        senderName: clientName,
+                        senderRole: 'client',
+                        message: message
+                    })
+                });
+            } catch (error) {
+                console.error('Erreur envoi message:', error);
+            }
+        }
+
+        function connectMultipleClients() {
+            testClients.forEach((client, index) => {
+                setTimeout(() => {
+                    connectClient(client.name, client.email);
+                }, index * 500);
+            });
+        }
+
+        function disconnectAllClients() {
+            simulatedClients.forEach(client => {
+                if (client.connected) {
+                    disconnectClient(client.id, client.name);
+                }
+            });
+        }
+
+        // Nouvelle fonction pour créer un compte
+        async function registerNewClient() {
+            const name = document.getElementById('newClientName').value.trim();
+            const email = document.getElementById('newClientEmail').value.trim();
+            const password = document.getElementById('newClientPassword').value.trim();
+            const phone = document.getElementById('newClientPhone').value.trim();
+            
+            if (!name || !email || !password) {
+                alert('Veuillez remplir tous les champs obligatoires (nom, email, mot de passe)');
+                return;
+            }
+            
+            try {
+                updateStatus(`📝 Création du compte pour ${name}...`);
+                
+                const response = await fetch(`${API_BASE}/api/auth/register`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        password,
+                        phone
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    updateStatus(`✅ Compte créé avec succès pour ${name} - Connecté automatiquement`);
+                    
+                    // Ajouter à la liste des clients simulés
+                    const newClient = {
+                        id: data.user.id,
+                        name: data.user.name,
+                        email: data.user.email,
+                        connected: true,
+                        connectedAt: new Date(),
+                        token: data.token
+                    };
+                    
+                    simulatedClients.push(newClient);
+                    updateClientsList();
+                    
+                    // Vider les champs
+                    document.getElementById('newClientName').value = '';
+                    document.getElementById('newClientEmail').value = '';
+                    document.getElementById('newClientPassword').value = '';
+                    document.getElementById('newClientPhone').value = '';
+                } else {
+                    updateStatus(`❌ Erreur création compte: ${data.message}`);
+                    alert(`Erreur: ${data.message}`);
+                }
+            } catch (error) {
+                updateStatus(`❌ Erreur réseau lors de la création du compte`);
+                console.error('Erreur:', error);
+            }
+        }
+
+        function connectCustomClient() {
+            const email = document.getElementById('clientEmail').value.trim();
+            const password = document.getElementById('clientPassword').value.trim();
+            
+            if (!email || !password) {
+                alert('Veuillez saisir email et mot de passe');
+                return;
+            }
+            
+            loginClient(email, password);
+        }
+        
+        // Fonction pour connecter un client existant
+        async function loginClient(email, password) {
+            try {
+                updateStatus(`🔑 Connexion de ${email}...`);
+                
+                const response = await fetch(`${API_BASE}/api/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    updateStatus(`✅ Client ${data.user.name} connecté avec succès`);
+                    
+                    // Retirer si déjà présent et ajouter
+                    simulatedClients = simulatedClients.filter(c => c.id !== data.user.id);
+                    
+                    const client = {
+                        id: data.user.id,
+                        name: data.user.name,
+                        email: data.user.email,
+                        connected: true,
+                        connectedAt: new Date(),
+                        token: data.token
+                    };
+                    
+                    simulatedClients.push(client);
+                    updateClientsList();
+                    
+                    // Vider les champs
+                    document.getElementById('clientEmail').value = '';
+                    document.getElementById('clientPassword').value = '';
+                } else {
+                    updateStatus(`❌ Erreur connexion: ${data.message}`);
+                    alert(`Erreur: ${data.message}`);
+                }
+            } catch (error) {
+                updateStatus(`❌ Erreur réseau lors de la connexion`);
+                console.error('Erreur:', error);
+            }
+        }
+
+        function sendRandomMessages() {
+            const messages = [
+                "J'aimerais un devis pour un site e-commerce",
+                "Avez-vous des tarifs pour les applications mobiles ?",
+                "Je cherche un designer pour mon logo",
+                "Combien coûte un site vitrine ?",
+                "Pouvez-vous m'aider avec le référencement ?",
+                "J'ai besoin d'une refonte complète",
+                "Quels sont vos délais de livraison ?",
+                "Proposez-vous de la maintenance ?"
+            ];
+            
+            simulatedClients.filter(c => c.connected).forEach(client => {
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                sendMessage(client.id, client.name, randomMessage);
+            });
+            
+            updateStatus(`💬 Messages aléatoires envoyés par ${simulatedClients.filter(c => c.connected).length} clients`);
+        }
+
+        function updateClientsList() {
+            const listEl = document.getElementById('clientsList');
+            
+            if (simulatedClients.length === 0) {
+                listEl.innerHTML = '<p style="text-align: center; color: #6b7280;">Aucun client simulé</p>';
+                return;
+            }
+            
+            listEl.innerHTML = simulatedClients.map(client => `
+                <div class="client-card ${client.connected ? 'online' : ''}">
+                    <div class="client-name">
+                        ${client.connected ? '🟢' : '⚪'} ${client.name}
+                    </div>
+                    <div class="client-status">
+                        ID: ${client.id}<br>
+                        Email: ${client.email}<br>
+                        Statut: ${client.connected ? 'En ligne' : 'Déconnecté'}<br>
+                        ${client.connected ? `Connecté: ${client.connectedAt.toLocaleTimeString()}` : ''}
+                    </div>
+                    <div style="margin-top: 0.5rem;">
+                        ${client.connected ? 
+                            `<button class="btn btn-disconnect" onclick="disconnectClient('${client.id}', '${client.name}')">Déconnecter</button>` :
+                            `<button class="btn btn-connect" onclick="connectClient('${client.name}', '${client.email}')">Reconnecter</button>`
+                        }
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Initialisation
+        updateClientsList();
+    </script>
+</body>
+</html>

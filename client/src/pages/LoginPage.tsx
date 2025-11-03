@@ -95,8 +95,20 @@ const LoginPage: React.FC = () => {
       <div className="max-w-md w-full">
         {/* Logo et titre */}
         <div className="text-center mb-8">
-          <div className="mx-auto w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-4">
-            <div className="w-8 h-8 text-white text-2xl font-bold">🔒</div>
+          <div className="mx-auto w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mb-4 relative">
+            <div className="w-8 h-8 text-white">
+              <svg viewBox="0 0 32 32" fill="currentColor">
+                <circle cx="8" cy="12" r="2"/>
+                <circle cx="24" cy="12" r="2"/>
+                <circle cx="16" cy="8" r="2"/>
+                <circle cx="16" cy="20" r="2"/>
+                <rect x="10" y="11" width="12" height="2"/>
+                <rect x="15" y="10" width="2" height="6"/>
+                <rect x="15" y="18" width="2" height="4"/>
+                <circle cx="6" cy="18" r="1.5"/>
+                <circle cx="26" cy="10" r="1.5"/>
+              </svg>
+            </div>
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">MiaTech</h1>
           <p className="text-gray-600">Connectez-vous à votre compte</p>

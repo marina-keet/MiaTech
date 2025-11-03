@@ -13,9 +13,10 @@ interface HomePageProps {
   onNavigateToOrder: () => void
   onNavigateToQuote: () => void
   onNavigateToProjects: () => void
+  onNavigateToChat: () => void
 }
 
-const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, onNavigateToQuote, onNavigateToProjects }) => {
+const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, onNavigateToQuote, onNavigateToProjects, onNavigateToChat }) => {
   return (
     <div style={{
       minHeight: '100vh',
@@ -31,38 +32,85 @@ const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, 
         maxWidth: '1200px',
         margin: '0 auto 30px'
       }}>
-        <div>
-          <h1 style={{ 
-            fontSize: '2.5rem', 
-            color: 'white',
-            margin: '0',
-            textShadow: '0 2px 10px rgba(0,0,0,0.3)'
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <div style={{ 
+            width: '60px', 
+            height: '60px', 
+            background: 'linear-gradient(135deg, #3B82F6, #1D4ED8)',
+            borderRadius: '15px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginRight: '15px',
+            boxShadow: '0 6px 20px rgba(59, 130, 246, 0.4)'
           }}>
-            M Tableau de Bord MiaTech
-          </h1>
-          <p style={{ 
-            color: 'rgba(255,255,255,0.9)', 
-            fontSize: '1.1rem',
-            margin: '5px 0 0 0'
-          }}>
-            Bienvenue, {user.name}!
-          </p>
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <g fill="white" opacity="0.9">
+                <circle cx="9" cy="15" r="2.5"/>
+                <circle cx="21" cy="15" r="2.5"/>
+                <circle cx="15" cy="9" r="2.5"/>
+                <circle cx="15" cy="21" r="2.5"/>
+                <rect x="11.5" y="13.5" width="7" height="3"/>
+                <rect x="13.5" y="11.5" width="3" height="4"/>
+                <rect x="13.5" y="18.5" width="3" height="4"/>
+                <circle cx="6" cy="21" r="1.5"/>
+                <circle cx="24" cy="12" r="1.5"/>
+              </g>
+            </svg>
+          </div>
+          <div>
+            <h1 style={{ 
+              fontSize: '2.5rem', 
+              color: 'white',
+              margin: '0',
+              textShadow: '0 2px 10px rgba(0,0,0,0.3)'
+            }}>
+              Tableau de Bord MiaTech
+            </h1>
+            <p style={{ 
+              color: 'rgba(255,255,255,0.9)', 
+              fontSize: '1.1rem',
+              margin: '5px 0 0 0'
+            }}>
+              Bienvenue, {user.name}!
+            </p>
+          </div>
         </div>
-        <button
-          onClick={onLogout}
-          style={{
-            background: 'rgba(255,255,255,0.2)',
-            border: '2px solid rgba(255,255,255,0.3)',
-            color: 'white',
-            padding: '12px 24px',
-            borderRadius: '25px',
-            cursor: 'pointer',
-            fontSize: '1rem',
-            fontWeight: '500'
-          }}
-        >
-          🚪 Se déconnecter
-        </button>
+        <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
+          <button
+            onClick={onNavigateToChat}
+            style={{
+              background: 'rgba(255,255,255,0.2)',
+              border: '2px solid rgba(255,255,255,0.3)',
+              color: 'white',
+              padding: '12px 20px',
+              borderRadius: '25px',
+              cursor: 'pointer',
+              fontSize: '1rem',
+              fontWeight: '500',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}
+          >
+            💬 Chat Support
+          </button>
+          <button
+            onClick={onLogout}
+            style={{
+              background: 'rgba(255,255,255,0.2)',
+              border: '2px solid rgba(255,255,255,0.3)',
+              color: 'white',
+              padding: '12px 24px',
+              borderRadius: '25px',
+              cursor: 'pointer',
+              fontSize: '1rem',
+              fontWeight: '500'
+            }}
+          >
+            🚪 Se déconnecter
+          </button>
+        </div>
       </div>
 
       {/* Navigation rapide */}

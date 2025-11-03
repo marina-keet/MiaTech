@@ -193,13 +193,100 @@
             font-size: 1.2rem;
             margin: 50px 0;
         }
+        
+        .tab-btn {
+            padding: 12px 24px;
+            border: 2px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .tab-btn.active {
+            background: rgba(255,255,255,0.9);
+            color: #374151;
+        }
+        
+        .tab-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .tab-btn.active:hover {
+            background: rgba(255,255,255,1);
+        }
+        
+        .payment-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .payment-info {
+            flex: 1;
+        }
+        
+        .payment-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #059669;
+        }
+        
+        .payment-method {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        
+        .method-stripe {
+            background: #635bff20;
+            color: #635bff;
+        }
+        
+        .method-mpesa {
+            background: #00d13a20;
+            color: #00d13a;
+        }
+        
+        .method-orange {
+            background: #ff690020;
+            color: #ff6900;
+        }
+        
+        .method-airtel {
+            background: #e6001220;
+            color: #e60012;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h1>🛡️ Administration MiaTech</h1>
-            <p>Validation des commandes clients</p>
+            <p>Gestion des commandes et paiements</p>
+        </div>
+        
+        <!-- Navigation tabs -->
+        <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;">
+            <button id="ordersTab" class="tab-btn active" onclick="showOrders()">
+                📋 Commandes en attente
+            </button>
+            <button id="paymentsTab" class="tab-btn" onclick="showPayments()">
+                💰 Paiements effectués
+            </button>
+            <button id="chatTab" class="tab-btn" onclick="showChat()">
+                💬 Chat Support
+            </button>
         </div>
         
         <div id="loading" class="loading">
@@ -215,6 +302,63 @@
             <h3 style="color: #374151; margin-bottom: 10px;">Aucune commande en attente</h3>
             <p style="color: #6b7280;">Toutes les commandes ont été traitées !</p>
         </div>
+        
+        <!-- Section Paiements -->
+        <div id="paymentsContainer" style="display: none;">
+            <div id="paymentsLoading" class="loading">
+                ⏳ Chargement des paiements...
+            </div>
+            
+            <div id="paymentsList" style="display: none;"></div>
+            
+            <div id="paymentsEmpty" class="empty-state" style="display: none;">
+                <div class="icon">💳</div>
+                <h3 style="color: #374151; margin-bottom: 10px;">Aucun paiement enregistré</h3>
+                <p style="color: #6b7280;">Les paiements apparaîtront ici une fois effectués</p>
+            </div>
+        </div>
+        
+        <!-- Section Chat -->
+        <div id="chatContainer" style="display: none;">
+            <div id="chatLoading" class="loading">
+                ⏳ Chargement du chat...
+            </div>
+            
+            <div id="chatContent" style="display: none;">
+                <!-- Statistiques du chat -->
+                <div id="chatStats" style="margin-bottom: 20px;"></div>
+                
+                <!-- Zone de chat -->
+                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); height: 500px; display: flex; flex-direction: column;">
+                    <!-- Messages -->
+                    <div id="chatMessages" style="flex: 1; padding: 20px; overflow-y: auto; background: #f8fafc;"></div>
+                    
+                    <!-- Zone de saisie -->
+                    <div style="padding: 20px; background: white; border-top: 1px solid #e5e7eb;">
+                        <div style="display: flex; gap: 10px; align-items: flex-end;">
+                            <textarea
+                                id="adminMessageInput"
+                                placeholder="Répondre au client..."
+                                style="flex: 1; padding: 12px; border: 2px solid #e5e7eb; border-radius: 12px; resize: none; min-height: 50px; max-height: 120px; font-family: inherit; outline: none;"
+                                onkeypress="handleAdminKeyPress(event)"
+                            ></textarea>
+                            <button
+                                onclick="sendAdminMessage()"
+                                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 12px 20px; border-radius: 12px; cursor: pointer; font-weight: bold; min-width: 80px;"
+                            >
+                                📤
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="chatEmpty" class="empty-state" style="display: none;">
+                <div class="icon">💬</div>
+                <h3 style="color: #374151; margin-bottom: 10px;">Aucun message pour le moment</h3>
+                <p style="color: #6b7280;">Les conversations clients apparaîtront ici</p>
+            </div>
+        </div>
     </div>
     
     <button class="refresh-btn" onclick="loadOrders()" title="Actualiser">
@@ -223,6 +367,11 @@
     
     <script>
         let orders = [];
+        
+        // Variables globales
+        let currentView = 'orders';
+        let chatMessages = [];
+        let chatStats = {};
         
         // Charger les commandes au démarrage
         document.addEventListener('DOMContentLoaded', function() {
@@ -368,6 +517,375 @@
             // Dans un vrai système, on marquerait comme rejetée
             alert('🗑️ Fonctionnalité de rejet en cours de développement');
         }
+        
+        // === GESTION DES ONGLETS ===
+        
+        function showOrders() {
+            currentView = 'orders';
+            document.getElementById('ordersTab').classList.add('active');
+            document.getElementById('paymentsTab').classList.remove('active');
+            document.getElementById('chatTab').classList.remove('active');
+            
+            document.getElementById('ordersContainer').style.display = 'grid';
+            document.getElementById('emptyState').style.display = orders.length === 0 ? 'block' : 'none';
+            document.getElementById('paymentsContainer').style.display = 'none';
+            document.getElementById('chatContainer').style.display = 'none';
+            
+            loadOrders();
+        }
+        
+        function showPayments() {
+            currentView = 'payments';
+            document.getElementById('paymentsTab').classList.add('active');
+            document.getElementById('ordersTab').classList.remove('active');
+            document.getElementById('chatTab').classList.remove('active');
+            
+            document.getElementById('ordersContainer').style.display = 'none';
+            document.getElementById('emptyState').style.display = 'none';
+            document.getElementById('paymentsContainer').style.display = 'block';
+            document.getElementById('chatContainer').style.display = 'none';
+            
+            loadPayments();
+        }
+        
+        function showChat() {
+            currentView = 'chat';
+            document.getElementById('chatTab').classList.add('active');
+            document.getElementById('ordersTab').classList.remove('active');
+            document.getElementById('paymentsTab').classList.remove('active');
+            
+            document.getElementById('ordersContainer').style.display = 'none';
+            document.getElementById('emptyState').style.display = 'none';
+            document.getElementById('paymentsContainer').style.display = 'none';
+            document.getElementById('chatContainer').style.display = 'block';
+            
+            loadChat();
+        }
+        
+        // === GESTION DES PAIEMENTS ===
+        
+        async function loadPayments() {
+            const loadingEl = document.getElementById('paymentsLoading');
+            const listEl = document.getElementById('paymentsList');
+            const emptyEl = document.getElementById('paymentsEmpty');
+            
+            loadingEl.style.display = 'block';
+            listEl.style.display = 'none';
+            emptyEl.style.display = 'none';
+            
+            try {
+                const response = await fetch('http://localhost:5000/api/admin/payments');
+                const data = await response.json();
+                
+                if (data.payments.length === 0) {
+                    emptyEl.style.display = 'block';
+                } else {
+                    renderPayments(data.payments, data.totalAmount);
+                    listEl.style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('❌ Erreur lors du chargement des paiements');
+            }
+            
+            loadingEl.style.display = 'none';
+        }
+        
+        function renderPayments(payments, totalAmount) {
+            const container = document.getElementById('paymentsList');
+            
+            container.innerHTML = `
+                <div style="background: white; border-radius: 15px; padding: 25px; margin-bottom: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+                    <h3 style="color: #1f2937; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                        💰 Résumé des Paiements
+                    </h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                        <div style="text-align: center; padding: 20px; background: #f0f9f5; border-radius: 12px;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #059669;">$${totalAmount}</div>
+                            <div style="color: #047857; font-weight: 600;">Total des revenus</div>
+                        </div>
+                        <div style="text-align: center; padding: 20px; background: #eff6ff; border-radius: 12px;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #3b82f6;">${payments.length}</div>
+                            <div style="color: #1d4ed8; font-weight: 600;">Transactions</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Trier par date (plus récents en premier)
+            const sortedPayments = payments.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+            
+            sortedPayments.forEach(payment => {
+                const paymentCard = createPaymentCard(payment);
+                container.appendChild(paymentCard);
+            });
+        }
+        
+        function createPaymentCard(payment) {
+            const card = document.createElement('div');
+            card.className = 'payment-card';
+            
+            const date = new Date(payment.createdAt).toLocaleDateString('fr-FR');
+            const time = new Date(payment.createdAt).toLocaleTimeString('fr-FR');
+            
+            const methodNames = {
+                'stripe': 'Carte Bancaire',
+                'mpesa': 'M-Pesa',
+                'orange-money': 'Orange Money',
+                'airtel-money': 'Airtel Money'
+            };
+            
+            const methodIcons = {
+                'stripe': '💳',
+                'mpesa': '📱',
+                'orange-money': '🍊',
+                'airtel-money': '🔴'
+            };
+            
+            // Affichage du numéro de réception pour les paiements mobiles
+            let recipientInfo = '';
+            if (payment.recipientNumber && payment.method !== 'stripe') {
+                recipientInfo = `<div style="color: #059669; font-size: 0.9rem; margin-top: 4px;">
+                    💰 Reçu sur: ${payment.recipientNumber}
+                </div>`;
+            }
+            
+            card.innerHTML = `
+                <div class="payment-info">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                        <span style="font-size: 1.2rem;">${methodIcons[payment.method] || '💳'}</span>
+                        <strong style="color: #1f2937;">${payment.customerData.name}</strong>
+                        <span class="payment-method method-${payment.method.replace('-', '')}">${methodNames[payment.method] || payment.method}</span>
+                    </div>
+                    <div style="color: #6b7280; font-size: 0.9rem;">
+                        📧 ${payment.customerData.email}
+                        ${payment.phoneNumber ? `<br />📱 ${payment.phoneNumber}` : ''}
+                    </div>
+                    <div style="color: #6b7280; font-size: 0.9rem; margin-top: 4px;">
+                        🆔 ${payment.transactionId} • 📅 ${date} à ${time}
+                    </div>
+                    ${recipientInfo}
+                </div>
+                <div style="text-align: right;">
+                    <div class="payment-amount">$${payment.amount}</div>
+                    <div style="color: #059669; font-size: 0.8rem; font-weight: 600;">✓ Payé</div>
+                </div>
+            `;
+            
+            return card;
+        }
+        
+        // === GESTION DU CHAT ADMIN ===
+        
+        async function loadChat() {
+            const loadingEl = document.getElementById('chatLoading');
+            const contentEl = document.getElementById('chatContent');
+            const emptyEl = document.getElementById('chatEmpty');
+            
+            loadingEl.style.display = 'block';
+            contentEl.style.display = 'none';
+            emptyEl.style.display = 'none';
+            
+            try {
+                // Charger les statistiques du chat
+                const statsResponse = await fetch('http://localhost:5000/api/admin/chat/stats');
+                const statsData = await statsResponse.json();
+                
+                // Charger les messages
+                const messagesResponse = await fetch('http://localhost:5000/api/chat/messages');
+                const messagesData = await messagesResponse.json();
+                
+                if (statsData.success) {
+                    chatStats = statsData;
+                    renderChatStats(statsData);
+                }
+                
+                if (messagesData.success) {
+                    chatMessages = messagesData.messages;
+                    renderChatMessages(messagesData.messages);
+                    
+                    if (messagesData.messages.length === 0) {
+                        emptyEl.style.display = 'block';
+                    } else {
+                        contentEl.style.display = 'block';
+                    }
+                } else {
+                    emptyEl.style.display = 'block';
+                }
+                
+            } catch (error) {
+                console.error('Erreur chargement chat:', error);
+                emptyEl.style.display = 'block';
+            }
+            
+            loadingEl.style.display = 'none';
+        }
+        
+        function renderChatStats(data) {
+            const container = document.getElementById('chatStats');
+            
+            container.innerHTML = `
+                <div style="background: white; border-radius: 15px; padding: 25px; margin-bottom: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+                    <h3 style="color: #1f2937; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                        📊 Statistiques du Chat Support
+                    </h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px;">
+                        <div style="text-align: center; padding: 20px; background: #f0f9ff; border-radius: 12px;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #3b82f6;">${data.stats.totalMessages}</div>
+                            <div style="color: #1d4ed8; font-weight: 600;">Messages total</div>
+                        </div>
+                        <div style="text-align: center; padding: 20px; background: #fef3c7; border-radius: 12px;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #d97706;">${data.stats.unreadMessages}</div>
+                            <div style="color: #92400e; font-weight: 600;">Non lus</div>
+                        </div>
+                        <div style="text-align: center; padding: 20px; background: #ecfdf5; border-radius: 12px;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #059669;">${data.stats.clientMessages}</div>
+                            <div style="color: #047857; font-weight: 600;">De clients</div>
+                        </div>
+                        <div style="text-align: center; padding: 20px; background: #fdf2f8; border-radius: 12px;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #be185d;">${data.stats.responseRate}%</div>
+                            <div style="color: #9d174d; font-weight: 600;">Taux réponse</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function renderChatMessages(messages) {
+            const container = document.getElementById('chatMessages');
+            
+            if (messages.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align: center; color: #6b7280; margin-top: 50px;">
+                        <div style="font-size: 3rem; margin-bottom: 20px;">💬</div>
+                        <h3>Aucun message pour le moment</h3>
+                        <p>Les conversations clients apparaîtront ici</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = '';
+            
+            messages.forEach((message, index) => {
+                const isAdminMessage = message.senderRole === 'admin';
+                const showDate = isNewDay(message, messages[index - 1]);
+                
+                if (showDate) {
+                    const dateDiv = document.createElement('div');
+                    dateDiv.style.cssText = 'text-align: center; margin: 20px 0; color: #6b7280; font-size: 0.9rem;';
+                    dateDiv.textContent = formatDate(message.timestamp);
+                    container.appendChild(dateDiv);
+                }
+                
+                const messageDiv = document.createElement('div');
+                messageDiv.style.cssText = `display: flex; justify-content: ${isAdminMessage ? 'flex-end' : 'flex-start'}; margin-bottom: 15px;`;
+                
+                const bubbleDiv = document.createElement('div');
+                bubbleDiv.style.cssText = `
+                    max-width: 70%;
+                    background: ${isAdminMessage 
+                        ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+                        : 'white'};
+                    color: ${isAdminMessage ? 'white' : '#1f2937'};
+                    padding: 12px 16px;
+                    border-radius: ${isAdminMessage 
+                        ? '20px 20px 5px 20px'
+                        : '20px 20px 20px 5px'};
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                `;
+                
+                bubbleDiv.innerHTML = `
+                    ${!isAdminMessage ? `
+                        <div style="font-size: 0.8rem; font-weight: bold; margin-bottom: 5px; color: #3b82f6;">
+                            👤 ${message.senderName}
+                        </div>
+                    ` : ''}
+                    <div style="margin-bottom: 5px;">${message.message}</div>
+                    <div style="font-size: 0.75rem; opacity: 0.8; text-align: right;">
+                        ${formatTime(message.timestamp)}
+                        ${isAdminMessage ? '<span style="margin-left: 5px;">' + (message.isRead ? '✓✓' : '✓') + '</span>' : ''}
+                    </div>
+                `;
+                
+                messageDiv.appendChild(bubbleDiv);
+                container.appendChild(messageDiv);
+            });
+            
+            // Auto-scroll vers le bas
+            container.scrollTop = container.scrollHeight;
+        }
+        
+        function isNewDay(currentMsg, previousMsg) {
+            if (!previousMsg) return true;
+            const currentDate = new Date(currentMsg.timestamp).toDateString();
+            const previousDate = new Date(previousMsg.timestamp).toDateString();
+            return currentDate !== previousDate;
+        }
+        
+        function formatDate(timestamp) {
+            return new Date(timestamp).toLocaleDateString('fr-FR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+        }
+        
+        function formatTime(timestamp) {
+            return new Date(timestamp).toLocaleTimeString('fr-FR', {
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+        
+        async function sendAdminMessage() {
+            const input = document.getElementById('adminMessageInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            try {
+                const response = await fetch('http://localhost:5000/api/chat/send', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message,
+                        senderId: 'admin',
+                        senderName: 'Support MiaTech',
+                        senderRole: 'admin'
+                    })
+                });
+                
+                const data = await response.json();
+                if (data.success) {
+                    input.value = '';
+                    // Recharger les messages
+                    loadChat();
+                } else {
+                    alert('Erreur envoi message: ' + data.message);
+                }
+                
+            } catch (error) {
+                console.error('Erreur envoi message admin:', error);
+                alert('Erreur réseau');
+            }
+        }
+        
+        function handleAdminKeyPress(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendAdminMessage();
+            }
+        }
+        
+        // Auto-refresh du chat toutes les 3 secondes si on est sur l'onglet chat
+        setInterval(() => {
+            if (currentView === 'chat') {
+                loadChat();
+            }
+        }, 3000);
     </script>
 </body>
 </html>

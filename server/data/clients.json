@@ -1,0 +1,110 @@
+{
+  "lastUpdate": "2025-11-03T18:15:50.594Z",
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin MiaTech",
+      "email": "admin@miatech.com",
+      "password": "$2a$10$5RY1XxdH8lXgyBnKCLWMLunH/y0n/58CchDirekojlWG.plOEw6lW",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Marina Admin",
+      "email": "marina@gmail.com",
+      "password": "$2a$10$5RY1XxdH8lXgyBnKCLWMLunH/y0n/58CchDirekojlWG.plOEw6lW",
+      "role": "super_admin"
+    },
+    {
+      "id": "1762175065067",
+      "email": "chancel@gmail.com",
+      "password": "$2a$10$.EjlpGFYaUJa0YVMbAiXO.rJsGSZxCDo3doIWeDzRx3szJjV2y2Gm",
+      "name": "chancel lala",
+      "phone": "",
+      "role": "client",
+      "createdAt": "2025-11-03T13:04:25.067Z",
+      "status": "active"
+    },
+    {
+      "id": "1762181401221",
+      "email": "admin@test.com",
+      "password": "$2a$10$LA/XQ.bgwcKQFinCANGc0eyNPrAYD4YYCqZNsztbyCiPS7JWXISEO",
+      "name": "Admin Test",
+      "phone": "0000000000",
+      "role": "client",
+      "createdAt": "2025-11-03T14:50:01.221Z",
+      "status": "active"
+    },
+    {
+      "id": "1762182908336",
+      "email": "testadmin@miatech.com",
+      "password": "$2a$10$CQqQ9/.wBnXDeieM6fqTyOeY.Hh/wE4oPhrCzNBHpGGsi03bVknEe",
+      "name": "Test Admin",
+      "phone": "",
+      "role": "client",
+      "createdAt": "2025-11-03T15:15:08.336Z",
+      "status": "active"
+    },
+    {
+      "id": 7,
+      "name": "kalala",
+      "email": "kalala@gmail.com",
+      "password": "$2a$12$vVnWaDtbnzG6oQCORUQNJuHq.9/5NswBf.ip4lxass61LrukPeLb2",
+      "role": "dev",
+      "createdAt": "2025-11-03T16:17:11.280Z",
+      "isActive": true
+    }
+  ],
+  "connectedClients": [
+    {
+      "id": "1762180644330",
+      "email": "chancel@test.com",
+      "name": "Chancel Test",
+      "role": "client",
+      "connectedAt": "2025-11-03T14:37:33.009Z",
+      "status": "online"
+    },
+    {
+      "id": "1762181401221",
+      "email": "admin@test.com",
+      "name": "Admin Test",
+      "role": "client",
+      "connectedAt": "2025-11-03T14:50:01.221Z",
+      "status": "online"
+    },
+    {
+      "id": "1762182908336",
+      "email": "testadmin@miatech.com",
+      "name": "Test Admin",
+      "role": "client",
+      "connectedAt": "2025-11-03T15:15:08.337Z",
+      "status": "online"
+    },
+    {
+      "id": 2,
+      "email": "marina@gmail.com",
+      "name": "Marina Admin",
+      "role": "super_admin",
+      "connectedAt": "2025-11-03T15:30:32.402Z",
+      "status": "online"
+    },
+    {
+      "id": 1,
+      "email": "admin@miatech.com",
+      "name": "Admin MiaTech",
+      "role": "admin",
+      "connectedAt": "2025-11-03T16:06:57.005Z",
+      "status": "online"
+    },
+    {
+      "id": "1762175065067",
+      "email": "chancel@gmail.com",
+      "name": "chancel lala",
+      "role": "client",
+      "connectedAt": "2025-11-03T18:05:20.890Z",
+      "status": "online"
+    }
+  ],
+  "usersCount": 6,
+  "clientsCount": 3
+}

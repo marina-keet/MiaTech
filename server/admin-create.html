@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiaTech - Créer un Administrateur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .create-admin-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo h1 {
+            color: #4f46e5;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            color: #374151;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+            background: #f9fafb;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #4f46e5;
+            background: white;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            background: #f9fafb;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .form-select:focus {
+            outline: none;
+            border-color: #4f46e5;
+            background: white;
+        }
+
+        .role-description {
+            background: #f3f4f6;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            border-left: 4px solid #4f46e5;
+        }
+
+        .role-description h4 {
+            color: #1f2937;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .role-description p {
+            color: #6b7280;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .permissions-list {
+            margin-top: 0.5rem;
+        }
+
+        .permissions-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .permissions-list li {
+            color: #059669;
+            font-size: 0.8rem;
+            padding: 0.2rem 0;
+        }
+
+        .permissions-list li:before {
+            content: "✓ ";
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .create-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            border: none;
+            padding: 0.875rem 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 1rem;
+        }
+
+        .create-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
+        }
+
+        .create-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #4f46e5;
+        }
+
+        .error-message {
+            background: #fee2e2;
+            color: #dc2626;
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            text-align: center;
+        }
+
+        .success-message {
+            background: #dcfce7;
+            color: #166534;
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            text-align: center;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f4f6;
+            border-radius: 50%;
+            border-top-color: #4f46e5;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 0.5rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .password-strength {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .strength-weak { color: #dc2626; }
+        .strength-medium { color: #d97706; }
+        .strength-strong { color: #059669; }
+
+        @media (max-width: 480px) {
+            .create-admin-container {
+                padding: 1.5rem;
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="create-admin-container">
+        <div class="logo">
+            <img src="miatech-logo.svg" alt="MiaTech Logo" style="height: 80px; margin-bottom: 10px;">
+            <p>Créer un nouveau compte administrateur</p>
+        </div>
+
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+        <div id="successMessage" class="success-message" style="display: none;"></div>
+
+        <form id="createAdminForm">
+            <div class="form-group">
+                <label for="name" class="form-label">👤 Nom complet</label>
+                <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    class="form-input" 
+                    placeholder="Ex: Jean Dupont"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">📧 Adresse email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    class="form-input" 
+                    placeholder="Ex: jean@miatech.com"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">🔒 Mot de passe</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    class="form-input" 
+                    placeholder="Mot de passe sécurisé"
+                    required
+                    minlength="6"
+                />
+                <div id="passwordStrength" class="password-strength"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword" class="form-label">🔒 Confirmer le mot de passe</label>
+                <input 
+                    type="password" 
+                    id="confirmPassword" 
+                    name="confirmPassword" 
+                    class="form-input" 
+                    placeholder="Répéter le mot de passe"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="role" class="form-label">🎯 Rôle et permissions</label>
+                <select id="role" name="role" class="form-select" required>
+                    <option value="">-- Choisir un rôle --</option>
+                    <option value="super_admin">🔱 Super Administrateur</option>
+                    <option value="admin">👨‍💼 Administrateur</option>
+                    <option value="dev">👨‍💻 Développeur</option>
+                    <option value="designer">🎨 Designer/Concepteur</option>
+                </select>
+                <div id="roleDescription" class="role-description" style="display: none;"></div>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                Création en cours...
+            </div>
+
+            <button type="submit" class="create-btn" id="createBtn">
+                ✨ Créer le compte administrateur
+            </button>
+
+            <a href="/admin-login" class="back-link">
+                ← Retour à la connexion
+            </a>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('createAdminForm');
+        const roleSelect = document.getElementById('role');
+        const roleDescription = document.getElementById('roleDescription');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        const passwordStrength = document.getElementById('passwordStrength');
+        const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+        const loading = document.getElementById('loading');
+        const createBtn = document.getElementById('createBtn');
+
+        // Descriptions des rôles
+        const roleDescriptions = {
+            super_admin: {
+                title: "Super Administrateur - Contrôle Total",
+                description: "Accès complet à toutes les fonctionnalités de la plateforme. Peut gérer tous les utilisateurs et paramètres système.",
+                permissions: [
+                    "Gestion complète des utilisateurs et administrateurs",
+                    "Configuration système et paramètres avancés",
+                    "Accès à toutes les données et statistiques",
+                    "Gestion des paiements et facturation",
+                    "Supervision de tous les projets et équipes",
+                    "Sauvegarde et maintenance système"
+                ]
+            },
+            admin: {
+                title: "Administrateur - Gestion Opérationnelle",
+                description: "Gestion des clients, commandes et opérations quotidiennes. Supervision des équipes de développement.",
+                permissions: [
+                    "Gestion des clients et commandes",
+                    "Supervision des projets en cours",
+                    "Accès aux rapports et statistiques",
+                    "Gestion de l'équipe (dev/designer)",
+                    "Communication client et support",
+                    "Validation des livrables"
+                ]
+            },
+            dev: {
+                title: "Développeur - Technique et Projets",
+                description: "Accès aux outils de développement, gestion des projets techniques et collaboration avec l'équipe.",
+                permissions: [
+                    "Accès aux projets de développement",
+                    "Gestion du code et versioning",
+                    "Communication avec clients techniques",
+                    "Suivi des tâches de développement",
+                    "Accès aux outils et documentation",
+                    "Collaboration avec designers"
+                ]
+            },
+            designer: {
+                title: "Designer/Concepteur - Créatif et UI/UX",
+                description: "Gestion des aspects créatifs, design UI/UX, et collaboration sur les projets visuels.",
+                permissions: [
+                    "Gestion des projets de design",
+                    "Accès aux ressources créatives",
+                    "Communication avec clients design",
+                    "Validation des maquettes et prototypes",
+                    "Collaboration avec développeurs",
+                    "Gestion des assets visuels"
+                ]
+            }
+        };
+
+        // Afficher description du rôle
+        roleSelect.addEventListener('change', function() {
+            const selectedRole = this.value;
+            if (selectedRole && roleDescriptions[selectedRole]) {
+                const desc = roleDescriptions[selectedRole];
+                roleDescription.innerHTML = `
+                    <h4>${desc.title}</h4>
+                    <p>${desc.description}</p>
+                    <div class="permissions-list">
+                        <ul>
+                            ${desc.permissions.map(p => `<li>${p}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+                roleDescription.style.display = 'block';
+            } else {
+                roleDescription.style.display = 'none';
+            }
+        });
+
+        // Vérification force du mot de passe
+        passwordInput.addEventListener('input', function() {
+            const password = this.value;
+            let strength = '';
+            let strengthClass = '';
+
+            if (password.length === 0) {
+                strength = '';
+            } else if (password.length < 6) {
+                strength = '❌ Trop court (minimum 6 caractères)';
+                strengthClass = 'strength-weak';
+            } else if (password.length < 8 || !/(?=.*[a-z])(?=.*[A-Z])/.test(password)) {
+                strength = '🟡 Moyen - Ajoutez majuscules/minuscules';
+                strengthClass = 'strength-medium';
+            } else if (!/(?=.*\d)(?=.*[!@#$%^&*])/.test(password)) {
+                strength = '🟡 Bien - Ajoutez chiffres et symboles';
+                strengthClass = 'strength-medium';
+            } else {
+                strength = '✅ Très fort - Parfait !';
+                strengthClass = 'strength-strong';
+            }
+
+            passwordStrength.textContent = strength;
+            passwordStrength.className = `password-strength ${strengthClass}`;
+        });
+
+        // Vérification confirmation mot de passe
+        confirmPasswordInput.addEventListener('input', function() {
+            if (this.value && this.value !== passwordInput.value) {
+                this.setCustomValidity('Les mots de passe ne correspondent pas');
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+
+        // Soumission du formulaire
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Validation
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            if (data.password !== data.confirmPassword) {
+                showError('Les mots de passe ne correspondent pas');
+                return;
+            }
+
+            if (data.password.length < 6) {
+                showError('Le mot de passe doit contenir au moins 6 caractères');
+                return;
+            }
+
+            // Afficher loading
+            showLoading(true);
+
+            try {
+                const response = await fetch('/api/admin/create', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: data.name,
+                        email: data.email,
+                        password: data.password,
+                        role: data.role
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showSuccess(`✅ Compte administrateur créé avec succès !<br>
+                               📧 Email: ${data.email}<br>
+                               🎯 Rôle: ${roleDescriptions[data.role].title}<br>
+                               <br>Redirection vers la connexion...`);
+                    
+                    form.reset();
+                    roleDescription.style.display = 'none';
+                    
+                    // Redirection après 3 secondes
+                    setTimeout(() => {
+                        window.location.href = '/admin-login';
+                    }, 3000);
+                } else {
+                    showError(result.message || 'Erreur lors de la création du compte');
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                showError('Erreur de connexion au serveur');
+            }
+
+            showLoading(false);
+        });
+
+        function showError(message) {
+            errorMessage.innerHTML = message;
+            errorMessage.style.display = 'block';
+            successMessage.style.display = 'none';
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        function showSuccess(message) {
+            successMessage.innerHTML = message;
+            successMessage.style.display = 'block';
+            errorMessage.style.display = 'none';
+        }
+
+        function showLoading(show) {
+            loading.style.display = show ? 'block' : 'none';
+            createBtn.disabled = show;
+        }
+    </script>
+</body>
+</html>

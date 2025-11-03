@@ -1,0 +1,26 @@
+{
+  "lastUpdate": "2025-11-03T22:22:10.814Z",
+  "messages": [
+    {
+      "id": 1,
+      "senderId": "1762175065067",
+      "senderName": "chancel lala",
+      "senderRole": "client",
+      "message": "der",
+      "timestamp": "2025-11-03T14:44:54.691Z",
+      "isRead": true,
+      "readAt": "2025-11-03T22:16:39.770Z",
+      "readBy": "admin@miatech.com"
+    },
+    {
+      "id": 2,
+      "senderId": "admin_001",
+      "senderName": "Admin MiaTech",
+      "senderRole": "admin",
+      "message": "bientot",
+      "timestamp": "2025-11-03T14:45:23.710Z",
+      "isRead": true
+    }
+  ],
+  "count": 2
+}

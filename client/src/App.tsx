@@ -3,6 +3,8 @@ import HomePage from './pages/HomePage'
 import OrderPage from './pages/OrderPage'
 import QuotePage from './pages/QuotePage'
 import ProjectTrackingPage from './pages/ProjectTrackingPage'
+import PaymentPage from './pages/PaymentPage'
+import ChatPage from './pages/ChatPage'
 
 interface User {
   id: string
@@ -11,10 +13,19 @@ interface User {
   role: string
 }
 
+interface OrderData {
+  id: number
+  serviceId: string
+  serviceName: string
+  description: string
+  amount: number
+}
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState<User | null>(null)
-  const [currentPage, setCurrentPage] = useState<'home' | 'order' | 'quote' | 'projects'>('home')
+  const [currentPage, setCurrentPage] = useState<'home' | 'order' | 'quote' | 'projects' | 'payment' | 'chat'>('home')
+  const [orderData, setOrderData] = useState<OrderData | null>(null)
   const [isLogin, setIsLogin] = useState(true)
   const [formData, setFormData] = useState({
     email: '',
@@ -39,6 +50,20 @@ function App() {
   }
 
   const handleNavigateToProjects = () => {
+    setCurrentPage('projects')
+  }
+
+  const handleNavigateToChat = () => {
+    setCurrentPage('chat')
+  }
+
+  const handleNavigateToPayment = (order: OrderData) => {
+    setOrderData(order)
+    setCurrentPage('payment')
+  }
+
+  const handlePaymentSuccess = () => {
+    alert('Paiement réussi ! Votre projet va bientôt commencer.')
     setCurrentPage('projects')
   }
 
@@ -103,7 +128,7 @@ function App() {
   // Si l'utilisateur est connecté, afficher la page appropriée
   if (isLoggedIn && user) {
     if (currentPage === 'order') {
-      return <OrderPage user={user} onBack={handleBackToHome} />
+      return <OrderPage user={user} onBack={handleBackToHome} onNavigateToPayment={handleNavigateToPayment} />
     }
     if (currentPage === 'quote') {
       return <QuotePage user={user} onBack={handleBackToHome} />
@@ -111,22 +136,55 @@ function App() {
     if (currentPage === 'projects') {
       return <ProjectTrackingPage user={user} onBack={handleBackToHome} />
     }
-    return <HomePage user={user} onLogout={handleLogout} onNavigateToOrder={handleNavigateToOrder} onNavigateToQuote={handleNavigateToQuote} onNavigateToProjects={handleNavigateToProjects} />
+    if (currentPage === 'chat') {
+      return <ChatPage user={user} onBack={handleBackToHome} />
+    }
+    if (currentPage === 'payment' && orderData) {
+      return <PaymentPage user={user} orderData={orderData} onBack={handleBackToHome} onPaymentSuccess={handlePaymentSuccess} />
+    }
+    return <HomePage user={user} onLogout={handleLogout} onNavigateToOrder={handleNavigateToOrder} onNavigateToQuote={handleNavigateToQuote} onNavigateToProjects={handleNavigateToProjects} onNavigateToChat={handleNavigateToChat} />
   }
 
   return (
     <div style={{ minHeight: '100vh', padding: '20px' }}>
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <h1 style={{ 
-          fontSize: '2.5rem', 
-          fontFamily: 'Poppins',
-          color: 'white',
-          marginBottom: '10px',
-          textShadow: '0 2px 10px rgba(0,0,0,0.3)'
-        }}>
-           MiaTech
-        </h1>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+          <div style={{ 
+            width: '80px', 
+            height: '80px', 
+            background: 'linear-gradient(135deg, #3B82F6, #1D4ED8)',
+            borderRadius: '20px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginRight: '15px',
+            boxShadow: '0 8px 25px rgba(59, 130, 246, 0.3)'
+          }}>
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <g fill="white" opacity="0.9">
+                <circle cx="12" cy="20" r="3"/>
+                <circle cx="28" cy="20" r="3"/>
+                <circle cx="20" cy="12" r="3"/>
+                <circle cx="20" cy="28" r="3"/>
+                <rect x="15" y="18.5" width="10" height="3"/>
+                <rect x="18.5" y="15" width="3" height="6"/>
+                <rect x="18.5" y="25" width="3" height="6"/>
+                <circle cx="8" cy="28" r="2"/>
+                <circle cx="32" cy="15" r="2"/>
+              </g>
+            </svg>
+          </div>
+          <h1 style={{ 
+            fontSize: '2.5rem', 
+            fontFamily: 'Poppins',
+            color: 'white',
+            margin: '0',
+            textShadow: '0 2px 10px rgba(0,0,0,0.3)'
+          }}>
+             MiaTech
+          </h1>
+        </div>
         <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.1rem' }}>
           Solutions Technologiques Innovantes
         </p>

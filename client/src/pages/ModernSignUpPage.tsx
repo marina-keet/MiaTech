@@ -90,10 +90,10 @@ const ModernSignUpPage: React.FC = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          firstName: formData.firstName,
-          lastName: formData.lastName,
+          name: `${formData.firstName} ${formData.lastName}`,
           email: formData.email,
-          password: formData.password
+          password: formData.password,
+          phone: '' // Champ optionnel pour l'API
         }),
       });
 

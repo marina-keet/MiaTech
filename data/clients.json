@@ -1,0 +1,95 @@
+{
+  "lastUpdate": "2025-11-03T22:22:10.813Z",
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin MiaTech",
+      "email": "admin@miatech.com",
+      "password": "$2a$10$example.hash.for.admin123",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Marina Admin",
+      "email": "marina@gmail.com",
+      "password": "$2a$10$example.hash.for.admin123",
+      "role": "super_admin"
+    },
+    {
+      "id": "1762175065067",
+      "email": "chancel@gmail.com",
+      "password": "$2a$10$.EjlpGFYaUJa0YVMbAiXO.rJsGSZxCDo3doIWeDzRx3szJjV2y2Gm",
+      "name": "chancel lala",
+      "phone": "",
+      "role": "client",
+      "createdAt": "2025-11-03T13:04:25.067Z",
+      "status": "active"
+    },
+    {
+      "id": "1762180644330",
+      "email": "chancel@test.com",
+      "password": "$2a$10$wH8dsWHslgIHtH4PTicGVO9Ss0W/OYSSIy4apkSko1jt1czjcA56u",
+      "name": "Chancel Test",
+      "phone": "0123456789",
+      "role": "client",
+      "createdAt": "2025-11-03T14:37:24.330Z",
+      "status": "active"
+    },
+    {
+      "id": "1762181401221",
+      "email": "admin@test.com",
+      "password": "$2a$10$LA/XQ.bgwcKQFinCANGc0eyNPrAYD4YYCqZNsztbyCiPS7JWXISEO",
+      "name": "Admin Test",
+      "phone": "0000000000",
+      "role": "client",
+      "createdAt": "2025-11-03T14:50:01.221Z",
+      "status": "active"
+    },
+    {
+      "id": "1762182908336",
+      "email": "testadmin@miatech.com",
+      "password": "$2a$10$CQqQ9/.wBnXDeieM6fqTyOeY.Hh/wE4oPhrCzNBHpGGsi03bVknEe",
+      "name": "Test Admin",
+      "phone": "",
+      "role": "client",
+      "createdAt": "2025-11-03T15:15:08.336Z",
+      "status": "active"
+    }
+  ],
+  "connectedClients": [
+    {
+      "id": "1762180644330",
+      "email": "chancel@test.com",
+      "name": "Chancel Test",
+      "role": "client",
+      "connectedAt": "2025-11-03T14:37:33.009Z",
+      "status": "online"
+    },
+    {
+      "id": "1762181401221",
+      "email": "admin@test.com",
+      "name": "Admin Test",
+      "role": "client",
+      "connectedAt": "2025-11-03T14:50:01.221Z",
+      "status": "online"
+    },
+    {
+      "id": "1762182908336",
+      "email": "testadmin@miatech.com",
+      "name": "Test Admin",
+      "role": "client",
+      "connectedAt": "2025-11-03T15:15:08.337Z",
+      "status": "online"
+    },
+    {
+      "id": "1762175065067",
+      "email": "chancel@gmail.com",
+      "name": "chancel lala",
+      "role": "client",
+      "connectedAt": "2025-11-03T21:13:55.394Z",
+      "status": "online"
+    }
+  ],
+  "usersCount": 6,
+  "clientsCount": 4
+}

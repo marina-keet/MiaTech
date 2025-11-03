@@ -27,6 +27,13 @@
 			"isBackground": true,
 			"problemMatcher": [],
 			"group": "build"
+		},
+		{
+			"label": "Start MiaTech Server Debug",
+			"type": "shell",
+			"command": "cd /home/marina/MiaTech && node server/server-temp.js",
+			"isBackground": true,
+			"group": "build"
 		}
 	]
 }

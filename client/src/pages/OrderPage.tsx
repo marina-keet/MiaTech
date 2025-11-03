@@ -10,9 +10,16 @@ interface User {
 interface OrderPageProps {
   user: User
   onBack: () => void
+  onNavigateToPayment: (orderData: {
+    id: number
+    serviceId: string
+    serviceName: string
+    description: string
+    amount: number
+  }) => void
 }
 
-const OrderPage: React.FC<OrderPageProps> = ({ user, onBack }) => {
+const OrderPage: React.FC<OrderPageProps> = ({ user, onBack, onNavigateToPayment }) => {
   const [selectedService, setSelectedService] = useState('')
   const [description, setDescription] = useState('')
   const [budget, setBudget] = useState('')
@@ -27,11 +34,34 @@ const OrderPage: React.FC<OrderPageProps> = ({ user, onBack }) => {
     { id: 'others', name: '⚡ Autres services', price: 'Sur devis' }
   ]
 
+  const getServicePrice = (serviceId: string): number => {
+    const prices: { [key: string]: number } = {
+      'web-dev': 2500,
+      'ui-ux': 1500,
+      'poster': 300,
+      'business-card': 150,
+      'others': 0
+    }
+    return prices[serviceId] || 0
+  }
+
+  const getServiceName = (serviceId: string): string => {
+    const service = services.find(s => s.id === serviceId)
+    return service ? service.name : ''
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    if (!selectedService || !description) {
+      alert('Veuillez remplir tous les champs obligatoires')
+      return
+    }
+
     setIsSubmitting(true)
 
     try {
+      // Créer la commande temporaire
       const orderData = {
         userId: user.id,
         serviceId: selectedService,
@@ -39,7 +69,7 @@ const OrderPage: React.FC<OrderPageProps> = ({ user, onBack }) => {
         budget,
         deadline,
         paymentMode: 'online',
-        status: 'pending'
+        status: 'draft' // Statut draft avant paiement
       }
 
       const response = await fetch('http://localhost:5000/api/orders', {
@@ -52,14 +82,20 @@ const OrderPage: React.FC<OrderPageProps> = ({ user, onBack }) => {
       })
 
       if (response.ok) {
-        alert('✅ Commande envoyée ! Redirection vers le paiement...')
-        // Reset form
-        setSelectedService('')
-        setDescription('')
-        setBudget('')
-        setDeadline('')
+        const result = await response.json()
+        
+        // Rediriger vers la page de paiement
+        const paymentData = {
+          id: result.order.id,
+          serviceId: selectedService,
+          serviceName: getServiceName(selectedService),
+          description,
+          amount: getServicePrice(selectedService)
+        }
+        
+        onNavigateToPayment(paymentData)
       } else {
-        alert('❌ Erreur lors de l\'envoi de la commande. Veuillez réessayer.')
+        alert('❌ Erreur lors de la création de la commande. Veuillez réessayer.')
       }
     } catch (error) {
       console.error('Erreur:', error)
