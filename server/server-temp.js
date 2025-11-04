@@ -49,7 +49,10 @@ let companySettings = {
   phone: '+33 1 23 45 67 89',
   address: '123 Rue de la Tech, 75001 Paris',
   website: 'https://miatech.com',
-  description: 'Cabinet de technologie spécialisé en développement web et mobile',
+  description: 'Chez MiaTech, nous transformons vos idées en solutions digitales modernes, du design à la mise en ligne. Spécialisés en applications web et design UI/UX.',
+  slogan: 'Votre partenaire digital de confiance',
+  specialization: 'Applications web modernes et design UI/UX innovant',
+  process: 'Idée → Design → Développement → Livraison → Suivi',
   updatedAt: new Date().toISOString(),
   updatedBy: null
 };

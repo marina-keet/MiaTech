@@ -3,7 +3,7 @@ nohup: les entrées sont ignorées
 � 6 utilisateurs chargés depuis ./data/clients.json
 👤 4 clients trouvés
 🔌 4 connexions restaurées
-📅 Dernière mise à jour: 2025-11-03T22:32:40.996Z
+📅 Dernière mise à jour: 2025-11-04T11:12:28.226Z
 📂 2 messages chargés
 📝 0 commandes chargées
 📊 0 projets chargés
@@ -22,508 +22,36 @@ nohup: les entrées sont ignorées
    🛡️  Gestion d'erreurs: Activée
    🔄 Auto-restart: Disponible
 ====================================
-2025-11-03T22:33:24.479Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:33:24.631Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 2,
-  email: 'marina@gmail.com',
-  role: 'admin',
-  iat: 1762169160,
-  exp: 1762255560
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
 💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
 💾 2 messages sauvegardés
 📝 0 commandes sauvegardées
 📊 0 projets sauvegardés
 💾 Paramètres sauvegardés dans ./data/settings.json
 💾 0 devis sauvegardés
-2025-11-03T22:33:49.090Z - GET /api/admin/quotes
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📋 Admin consultation devis: 0 demandes
-2025-11-03T22:33:49.103Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:33:52.712Z - GET /api/admin/settings
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération des paramètres entreprise
-2025-11-03T22:33:54.473Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:33:54.634Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 2,
-  email: 'marina@gmail.com',
-  role: 'admin',
-  iat: 1762169160,
-  exp: 1762255560
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:34:00.788Z - GET /api/admin/settings
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération des paramètres entreprise
-2025-11-03T22:34:01.172Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
+2025-11-04T11:13:32.295Z - GET /api/health
+📊 Health check OK
 💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
 💾 2 messages sauvegardés
 📝 0 commandes sauvegardées
 📊 0 projets sauvegardés
 💾 Paramètres sauvegardés dans ./data/settings.json
 💾 0 devis sauvegardés
-2025-11-03T22:34:24.389Z - GET /admin-dashboard-protected.html
-2025-11-03T22:34:24.481Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:34:24.631Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 2,
-  email: 'marina@gmail.com',
-  role: 'admin',
-  iat: 1762169160,
-  exp: 1762255560
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:34:25.176Z - GET /api/admin/verify
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-2025-11-03T22:34:26.220Z - GET /api/admin/all-clients
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération de tous les clients pour admin dashboard...
-📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
-2025-11-03T22:34:26.225Z - GET /api/admin/payments
-💰 Consultation des paiements - Total: 0
-2025-11-03T22:34:26.227Z - GET /api/orders
-2025-11-03T22:34:26.290Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:34:29.900Z - GET /api/admin/settings
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération des paramètres entreprise
 💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
 💾 2 messages sauvegardés
 📝 0 commandes sauvegardées
 📊 0 projets sauvegardés
 💾 Paramètres sauvegardés dans ./data/settings.json
 💾 0 devis sauvegardés
-2025-11-03T22:34:50.480Z - PUT /api/admin/settings
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-💾 Sauvegarde des paramètres: {
-  name: 'MiaTech',
-  email: 'contact@miatech.com',
-  phone: '+33 1 23 45 67 89',
-  address: '123 Rue de la Tech, 75001 Paris',
-  website: 'https://miatech.com',
-  description: 'Cabinet de technologie spécialisé en développement web'
-}
-💾 Paramètres sauvegardés dans ./data/settings.json
-✅ Paramètres sauvegardés et persistés: {
-  name: 'MiaTech',
-  email: 'contact@miatech.com',
-  phone: '+33 1 23 45 67 89',
-  address: '123 Rue de la Tech, 75001 Paris',
-  website: 'https://miatech.com',
-  description: 'Cabinet de technologie spécialisé en développement web',
-  updatedAt: '2025-11-03T22:34:50.482Z',
-  updatedBy: 999
-}
-2025-11-03T22:34:54.468Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:34:54.630Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 2,
-  email: 'marina@gmail.com',
-  role: 'admin',
-  iat: 1762169160,
-  exp: 1762255560
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:34:55.159Z - GET /api/admin/settings
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération des paramètres entreprise
-2025-11-03T22:34:56.291Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:34:58.524Z - GET /admin-dashboard-protected.html
-2025-11-03T22:34:58.779Z - GET /api/admin/verify
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-2025-11-03T22:34:58.927Z - GET /api/admin/all-clients
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération de tous les clients pour admin dashboard...
-📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
-2025-11-03T22:34:58.931Z - GET /api/orders
-2025-11-03T22:34:58.934Z - GET /api/admin/payments
-💰 Consultation des paiements - Total: 0
-2025-11-03T22:34:58.971Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:35:01.081Z - GET /api/admin/settings
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération des paramètres entreprise
-2025-11-03T22:35:09.997Z - GET /api/admin/projects
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-2025-11-03T22:35:10.063Z - GET /api/admin/all-clients
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération de tous les clients pour admin dashboard...
-📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
+2025-11-04T11:14:28.183Z - POST /api/auth/login
+🔑 Connexion - données: { email: 'chancel@gmail.com' }
+❌ Mot de passe incorrect
 💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
 💾 2 messages sauvegardés
 📝 0 commandes sauvegardées
 📊 0 projets sauvegardés
 💾 Paramètres sauvegardés dans ./data/settings.json
 💾 0 devis sauvegardés
-2025-11-03T22:35:24.472Z - GET /api/chat/messages
-📬 Chargement des messages de chat
-2025-11-03T22:35:24.630Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJpbmFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTY5MTYwLCJleHAiOjE3NjIyNTU1NjB9.PSUyHhlFg8QnwazsAFrPJ4zzsrozHdImvzGgxejtjZU
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 2,
-  email: 'marina@gmail.com',
-  role: 'admin',
-  iat: 1762169160,
-  exp: 1762255560
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:35:28.775Z - GET /api/admin/projects
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-2025-11-03T22:35:28.788Z - GET /api/admin/all-clients
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération de tous les clients pour admin dashboard...
-📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
-2025-11-03T22:35:28.986Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
-💾 2 messages sauvegardés
-📝 0 commandes sauvegardées
-📊 0 projets sauvegardés
-💾 Paramètres sauvegardés dans ./data/settings.json
-💾 0 devis sauvegardés
-2025-11-03T22:35:59.011Z - GET /api/admin/projects
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-2025-11-03T22:35:59.026Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:35:59.061Z - GET /api/admin/all-clients
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération de tous les clients pour admin dashboard...
-📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
-2025-11-03T22:36:03.005Z - POST /api/auth/login
+2025-11-04T11:14:56.748Z - POST /api/auth/login
 🔑 Connexion - données: { email: 'chancel@gmail.com' }
 ✅ Connexion réussie et sauvegardée: chancel@gmail.com
 💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
@@ -532,205 +60,6 @@ nohup: les entrées sont ignorées
 📊 0 projets sauvegardés
 💾 Paramètres sauvegardés dans ./data/settings.json
 💾 0 devis sauvegardés
-2025-11-03T22:36:28.997Z - GET /api/admin/projects
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-2025-11-03T22:36:29.000Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:36:29.006Z - GET /api/admin/all-clients
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération de tous les clients pour admin dashboard...
-📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
-💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
-💾 2 messages sauvegardés
-📝 0 commandes sauvegardées
-📊 0 projets sauvegardés
-💾 Paramètres sauvegardés dans ./data/settings.json
-💾 0 devis sauvegardés
-2025-11-03T22:36:59.002Z - GET /api/admin/projects
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-2025-11-03T22:36:59.005Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:36:59.010Z - GET /api/admin/all-clients
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération de tous les clients pour admin dashboard...
-📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
-💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
-💾 2 messages sauvegardés
-📝 0 commandes sauvegardées
-📊 0 projets sauvegardés
-💾 Paramètres sauvegardés dans ./data/settings.json
-💾 0 devis sauvegardés
-2025-11-03T22:37:28.996Z - GET /api/admin/projects
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-2025-11-03T22:37:28.999Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:37:29.007Z - GET /api/admin/all-clients
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération de tous les clients pour admin dashboard...
-📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
-💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
-💾 2 messages sauvegardés
-📝 0 commandes sauvegardées
-📊 0 projets sauvegardés
-💾 Paramètres sauvegardés dans ./data/settings.json
-💾 0 devis sauvegardés
-2025-11-03T22:37:58.997Z - GET /api/admin/projects
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-2025-11-03T22:37:59.003Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:37:59.067Z - GET /api/admin/all-clients
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération de tous les clients pour admin dashboard...
-📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
-💚 Serveur en vie - 23:38:12
 💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
 💾 2 messages sauvegardés
 📝 0 commandes sauvegardées
@@ -743,51 +72,6 @@ nohup: les entrées sont ignorées
 📊 0 projets sauvegardés
 💾 Paramètres sauvegardés dans ./data/settings.json
 💾 0 devis sauvegardés
-2025-11-03T22:38:53.009Z - GET /api/admin/projects
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-2025-11-03T22:38:53.212Z - GET /api/admin/notifications
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📢 Récupération des notifications admin
-2025-11-03T22:38:53.219Z - GET /api/admin/all-clients
-🔐 verifyAdmin appelé
-📋 Headers: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5LCJlbWFpbCI6ImFkbWluQG1pYXRlY2guY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyMTg3NjgzLCJleHAiOjE3NjIyNzQwODN9.NTQwtN8CmBocI2t8Ja8u84NvjEUoLD-zYRFBbbea9tg
-🔍 Vérification token...
-✅ Token décodé: {
-  id: 999,
-  email: 'admin@miatech.com',
-  role: 'admin',
-  iat: 1762187683,
-  exp: 1762274083
-}
-🎭 Rôle utilisateur: admin
-✅ Rôles acceptés: [ 'super_admin', 'admin', 'dev', 'designer' ]
-✅ Authentification admin réussie
-📊 Récupération de tous les clients pour admin dashboard...
-📊 Clients récupérés: 2 total, 2 en ligne, 0 commandes, 0 paiements
 💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
 💾 2 messages sauvegardés
 📝 0 commandes sauvegardées
@@ -795,6 +79,1162 @@ nohup: les entrées sont ignorées
 💾 Paramètres sauvegardés dans ./data/settings.json
 💾 0 devis sauvegardés
 💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 12:17:53
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 12:22:53
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 12:27:53
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 12:32:53
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 12:37:53
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+2025-11-04T11:40:08.752Z - POST /api/auth/login
+🔑 Connexion - données: { email: 'chancel@gmail.com' }
+✅ Connexion réussie et sauvegardée: chancel@gmail.com
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+2025-11-04T11:41:29.114Z - POST /api/auth/login
+🔑 Connexion - données: { email: 'chancel@gmail.com' }
+✅ Connexion réussie et sauvegardée: chancel@gmail.com
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+2025-11-04T11:41:55.922Z - GET /api/projects/1762175065067
+📊 Récupération des projets pour l'utilisateur 1762175065067 - Trouvés: 0
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 12:42:53
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 12:47:54
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 12:52:54
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 12:57:54
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+2025-11-04T11:59:04.519Z - POST /api/auth/login
+🔑 Connexion - données: { email: 'chancel@gmail.com' }
+✅ Connexion réussie et sauvegardée: chancel@gmail.com
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 13:02:54
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 13:07:54
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 13:12:54
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 13:17:54
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+2025-11-04T12:22:48.012Z - POST /api/auth/login
+🔑 Connexion - données: { email: 'chancel@gmail.com' }
+✅ Connexion réussie et sauvegardée: chancel@gmail.com
+💚 Serveur en vie - 13:22:54
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 13:27:54
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 13:32:54
+2025-11-04T12:32:55.133Z - POST /api/auth/login
+🔑 Connexion - données: { email: 'chancel@gmail.com' }
+✅ Connexion réussie et sauvegardée: chancel@gmail.com
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 13:37:54
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 13:42:54
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+2025-11-04T12:43:25.071Z - POST /api/auth/login
+🔑 Connexion - données: { email: 'chancel@gmail.com' }
+✅ Connexion réussie et sauvegardée: chancel@gmail.com
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 6 utilisateurs sauvegardés dans ./data/clients.json (4 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+2025-11-04T12:45:51.241Z - POST /api/auth/register
+📝 Enregistrement - données: { email: 'rosalie@gmail.com', name: 'ROSALI MOMO' }
+💾 8 utilisateurs sauvegardés dans ./data/clients.json (6 clients)
+✅ Nouveau client enregistré et sauvegardé: ROSALI MOMO (rosalie@gmail.com)
+💾 8 utilisateurs sauvegardés dans ./data/clients.json (6 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+2025-11-04T12:46:08.313Z - POST /api/auth/login
+🔑 Connexion - données: { email: 'rosalie@gmail.com' }
+✅ Connexion réussie et sauvegardée: rosalie@gmail.com
+💾 8 utilisateurs sauvegardés dans ./data/clients.json (6 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 8 utilisateurs sauvegardés dans ./data/clients.json (6 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 8 utilisateurs sauvegardés dans ./data/clients.json (6 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💚 Serveur en vie - 13:47:54
+💾 8 utilisateurs sauvegardés dans ./data/clients.json (6 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 8 utilisateurs sauvegardés dans ./data/clients.json (6 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 8 utilisateurs sauvegardés dans ./data/clients.json (6 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 8 utilisateurs sauvegardés dans ./data/clients.json (6 clients)
+💾 2 messages sauvegardés
+📝 0 commandes sauvegardées
+📊 0 projets sauvegardés
+💾 Paramètres sauvegardés dans ./data/settings.json
+💾 0 devis sauvegardés
+💾 8 utilisateurs sauvegardés dans ./data/clients.json (6 clients)
 💾 2 messages sauvegardés
 📝 0 commandes sauvegardées
 📊 0 projets sauvegardés

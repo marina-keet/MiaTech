@@ -217,8 +217,7 @@ const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, 
             background: 'rgba(255, 255, 255, 0.95)',
             borderRadius: '15px',
             padding: '30px',
-            boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
-            marginBottom: '30px'
+            boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
           }}>
           <h2 style={{ 
             color: '#1f2937', 
@@ -288,17 +287,24 @@ const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, 
             </div>
 
             {/* UI/UX Design */}
-            <div 
-              className="card-animated animate-fade-up animate-delay-800"
-              style={{
-                background: 'white',
-                borderRadius: '16px',
-                padding: '25px',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                border: '1px solid #f1f5f9',
-                cursor: 'pointer',
-                textAlign: 'center'
-              }}>
+            <div style={{
+              background: 'white',
+              borderRadius: '16px',
+              padding: '25px',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+              border: '1px solid #f1f5f9',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px)'
+              e.currentTarget.style.boxShadow = '0 10px 40px rgba(0,0,0,0.15)'
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)'
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)'
+            }}>
               <div style={{
                 width: '60px',
                 height: '60px',
@@ -338,17 +344,24 @@ const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, 
             </div>
 
             {/* Conception d'affiches */}
-            <div 
-              className="card-animated animate-fade-up animate-delay-900"
-              style={{
-                background: 'white',
-                borderRadius: '16px',
-                padding: '25px',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                border: '1px solid #f1f5f9',
-                cursor: 'pointer',
-                textAlign: 'center'
-              }}>
+            <div style={{
+              background: 'white',
+              borderRadius: '16px',
+              padding: '25px',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+              border: '1px solid #f1f5f9',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px)'
+              e.currentTarget.style.boxShadow = '0 10px 40px rgba(0,0,0,0.15)'
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)'
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)'
+            }}>
               <div style={{
                 width: '60px',
                 height: '60px',
@@ -388,17 +401,24 @@ const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, 
             </div>
 
             {/* Cartes de visite */}
-            <div 
-              className="card-animated animate-fade-up animate-delay-1000"
-              style={{
-                background: 'white',
-                borderRadius: '16px',
-                padding: '25px',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                border: '1px solid #f1f5f9',
-                cursor: 'pointer',
-                textAlign: 'center'
-              }}>
+            <div style={{
+              background: 'white',
+              borderRadius: '16px',
+              padding: '25px',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+              border: '1px solid #f1f5f9',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px)'
+              e.currentTarget.style.boxShadow = '0 10px 40px rgba(0,0,0,0.15)'
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)'
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)'
+            }}>
               <div style={{
                 width: '60px',
                 height: '60px',
@@ -438,30 +458,28 @@ const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, 
             </div>
 
             {/* Logo professionnel */}
-            <div 
-              className="card-animated animate-fade-up animate-delay-1100"
-              style={{
-                background: 'white',
-                borderRadius: '16px',
-                padding: '25px',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                border: '1px solid #f1f5f9',
-                cursor: 'pointer',
-                textAlign: 'center'
-              }}>
+            <div style={{
+              background: 'white',
+              borderRadius: '16px',
+              padding: '25px',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+              border: '1px solid #f1f5f9',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px)'
+              e.currentTarget.style.boxShadow = '0 10px 40px rgba(0,0,0,0.15)'
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)'
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)'
+            }}>
               <div style={{
-                width: '60px',
-                height: '60px',
-                background: 'linear-gradient(135deg, #f59e0b, #d97706)',
-                borderRadius: '12px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto 20px',
-                fontSize: '24px'
-              }}>
-                🏷️
-              </div>
+                fontSize: '3rem',
+                marginBottom: '15px'
+              }}>🏷️</div>
               <h3 style={{
                 fontSize: '1.3rem',
                 fontWeight: '600',
@@ -476,7 +494,7 @@ const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, 
                 lineHeight: '1.5',
                 marginBottom: '15px'
               }}>
-                Logos uniques et mémorables pour votre marque
+                Logos uniques et mémorables pour votre marque (prix négociable)
               </p>
               <div style={{
                 fontSize: '1.1rem',
@@ -488,17 +506,24 @@ const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, 
             </div>
 
             {/* Autres services */}
-            <div 
-              className="card-animated animate-fade-up animate-delay-1200"
-              style={{
-                background: 'white',
-                borderRadius: '16px',
-                padding: '25px',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                border: '1px solid #f1f5f9',
-                cursor: 'pointer',
-                textAlign: 'center'
-              }}>
+            <div style={{
+              background: 'white',
+              borderRadius: '16px',
+              padding: '25px',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+              border: '1px solid #f1f5f9',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px)'
+              e.currentTarget.style.boxShadow = '0 10px 40px rgba(0,0,0,0.15)'
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)'
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)'
+            }}>
               <div style={{
                 width: '60px',
                 height: '60px',
@@ -536,6 +561,7 @@ const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, 
                 Sur devis
               </div>
             </div>
+            
           </div>
           
           {/* Boutons d'action */}
@@ -547,9 +573,9 @@ const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, 
             maxWidth: '500px',
             margin: '30px auto 0'
           }}>
+            {/* Bouton Demander un devis */}
             <button
               onClick={onNavigateToQuote}
-              className="btn-animated"
               style={{
                 background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
                 border: 'none',
@@ -559,15 +585,24 @@ const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, 
                 cursor: 'pointer',
                 fontSize: '1rem',
                 fontWeight: '600',
-                boxShadow: '0 5px 15px rgba(59, 130, 246, 0.3)'
+                boxShadow: '0 5px 15px rgba(59, 130, 246, 0.3)',
+                transition: 'all 0.3s'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)'
+                e.currentTarget.style.boxShadow = '0 8px 25px rgba(59, 130, 246, 0.4)'
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)'
+                e.currentTarget.style.boxShadow = '0 5px 15px rgba(59, 130, 246, 0.3)'
               }}
             >
               📋 Demander un devis
             </button>
 
+            {/* Bouton Commander */}
             <button
               onClick={onNavigateToOrder}
-              className="btn-animated"
               style={{
                 background: 'linear-gradient(135deg, #10b981, #059669)',
                 border: 'none',
@@ -577,7 +612,16 @@ const HomePage: React.FC<HomePageProps> = ({ user, onLogout, onNavigateToOrder, 
                 cursor: 'pointer',
                 fontSize: '1rem',
                 fontWeight: '600',
-                boxShadow: '0 5px 15px rgba(16, 185, 129, 0.3)'
+                boxShadow: '0 5px 15px rgba(16, 185, 129, 0.3)',
+                transition: 'all 0.3s'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)'
+                e.currentTarget.style.boxShadow = '0 8px 25px rgba(16, 185, 129, 0.4)'
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)'
+                e.currentTarget.style.boxShadow = '0 5px 15px rgba(16, 185, 129, 0.3)'
               }}
             >
               🛍️ Commander un service
